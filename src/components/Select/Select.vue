@@ -128,8 +128,8 @@ export default {
 <style>
 .fx-select {
   width: 100%;
-  height: var(--fx-select--height);
   display: block;
+  height: var(--fx-select--height);
 
   form {
     position: relative;
@@ -139,7 +139,6 @@ export default {
     width: 100%;
     display: flex;
     align-items: center;
-    @mixin font-size 14;
   }
 
   input {
@@ -157,7 +156,6 @@ export default {
     transform: translateY(-50%);
     transition: all 0.3s var(--easing--inf-outs);
     cursor: pointer;
-    @mixin font-size 14;
   }
 
   .fx-chip-group {

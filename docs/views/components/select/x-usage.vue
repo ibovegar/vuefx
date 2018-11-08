@@ -32,10 +32,6 @@ export default {
 </script>
 
 <style scoped>
-div + div {
-  margin-bottom: 30px;
-}
-
 .wrapper {
   display: flex;
   flex-direction: row;

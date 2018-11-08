@@ -21,16 +21,16 @@ export default {
     margin: 0;
     font-weight: var(--font-weight--regular);
     color: var(--color--font-1);
-    @mixin font-size 40;
+    @mixin font-size 42;
    }
 
   p {
-    color: var(--color--font-3);
+    color: var(--color--font-4);
     line-height: 1.6;
     margin-bottom: var(--spacing--huge);
     margin-top: var(--spacing--medium);
     font-weight: var(--font-weight--regular);
-    @mixin font-size 17.2;
+    @mixin font-size 19.5;
   }
 }
 </style>

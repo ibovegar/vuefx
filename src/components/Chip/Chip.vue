@@ -52,7 +52,6 @@ export default {
   color: var(--fx-chip--font-color);
   border-color: var(--fx-chip--border-color);
   background-color: var(--fx-chip--background-color);
-  @mixin font-size 14;
 
   &.has-outline { --fx-chip--background-color: 'transparent' }
 

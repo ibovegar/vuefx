@@ -20,14 +20,14 @@ export default {
   h3 {
     margin: 0;
     font-weight: var(--font-weight--regular);
-    @mixin font-size 18;
+    @mixin font-size 19.5;
   }
 
   p {
     color: var(--color--font-3);
     margin-top: var(--spacing--small);
     line-height: 1.5;
-    @mixin font-size 14;
+    @mixin font-size 16;
   }
 }
 </style>

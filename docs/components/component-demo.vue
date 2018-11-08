@@ -142,6 +142,7 @@ export default {
     }
 
     .fx-tabs {
+      @mixin font-size 16;
       border-bottom-left-radius: var(--border-radius--medium);
       border-bottom-right-radius: var(--border-radius--medium);
     }

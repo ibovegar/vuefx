@@ -71,7 +71,6 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  @mixin font-size 14;
 
   &:hover, &:focus {
     background-color: var(--color--fill-3);

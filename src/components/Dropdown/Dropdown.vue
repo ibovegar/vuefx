@@ -144,7 +144,6 @@ export default {
     padding: var(--spacing--small) 0;
     transform-style: preserve-3d;
     @mixin elevation 7;
-    @mixin font-size 14;
 
     &:focus { outline: none }
 
@@ -158,7 +157,6 @@ export default {
     padding: var(--spacing--medium);
     font-weight: var(--font-weight--regular);
     color: var(--color--font-1);
-    @mixin font-size 14;
   }
 
   ul {

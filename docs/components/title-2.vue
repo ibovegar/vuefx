@@ -21,7 +21,7 @@ export default {
     margin: 0;
     font-weight: var(--font-weight--regular);
     color: var(--color--font-1);
-    @mixin font-size 26;
+    @mixin font-size 28;
   }
 
   p {
@@ -29,7 +29,7 @@ export default {
     color: var(--color--font-3);
     margin: 0;
     padding-top: var(--spacing--medium);
-    @mixin font-size 14;
+    @mixin font-size 16;
    }
 
   .fx-icon {
