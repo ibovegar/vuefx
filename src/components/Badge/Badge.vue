@@ -1,8 +1,8 @@
 <template>
-  <div class="ks-badge">
+  <div class="fx-badge">
     <slot/>
     <span
-      class="ks-badge__badge"
+      class="badge"
       :style="{ top: offsetY + 'px', right: offsetX + 'px' }"
       :class="{ 'expanded': (value > 9) }"
       v-show="value > 0"
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'ks-badge',
+  name: 'fx-badge',
 
   props: {
     offsetX: Number,
@@ -26,22 +26,22 @@ export default {
 </script>
 
 <style>
-.ks-badge {
+.fx-badge {
   position: relative;
 
-  &__badge {
+  .badge {
     position: absolute;
     top: 0px;
     right: 0px;
-    height: var(--ks-badge--height);
-    min-width: var(--ks-badge--height);
-    line-height: var(--ks-badge--height);
+    height: var(--fx-badge--height);
+    min-width: var(--fx-badge--height);
+    line-height: var(--fx-badge--height);
     text-align: center;
     font-weight: var(--font-weight--bold);
-    border-radius: calc(var(--ks-badge--height) / 2);
+    border-radius: calc(var(--fx-badge--height) / 2);
     color: var(--color--font-i);
     background-color: var(--color--alert);
-    font-size: var(--font-size--10);
+    @mixin font-size 10;
   }
 
   &.expanded {

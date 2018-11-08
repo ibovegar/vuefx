@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ks-chip-group"
+    class="fx-chip-group"
     v-drag-scroll
     >
     <slot/>
@@ -11,7 +11,7 @@
 import DragScroll from '@/directives/drag-scroll'
 
 export default {
-  name: 'ks-chip-group',
+  name: 'fx-chip-group',
 
   directives: { DragScroll },
 
@@ -34,12 +34,12 @@ export default {
 </script>
 
 <style>
-.ks-chip-group {
+.fx-chip-group {
   overflow: hidden;
   display: flex;
   flex-direction: row;
 
-  .ks-chip {
+  .fx-chip {
     margin-left: 4px;
 
     &:first-child {

@@ -1,30 +1,35 @@
 <template>
   <section>
-    <ks-button @button-clicked="selectedItem = 'print'">Select print</ks-button>
-    <ks-dropdown v-model="selectedItem" inherit-width focus-check close-on-click overlay>
-      <div class="main-menu" slot="trigger">
-        <ks-icon><i-settings/></ks-icon>
+    <fx-button @button-clicked="selectedItem = 'print'">
+      Select print
+    </fx-button>
+    <fx-dropdown
+      v-model="selectedItem"
+      inherit-width
+      focus-check
+      close-on-click
+      overlay
+      >
+      <fx-icon slot="trigger" class="main-menu" name="settings">
         Preferences
-      </div>
-      <ks-dropdown-item value="save"><ks-icon><account-circle/></ks-icon>Save</ks-dropdown-item>
-      <ks-dropdown-item separator/>
-      <ks-dropdown-item disabled value="save_all">Save all</ks-dropdown-item>
-      <ks-dropdown-item value="preferences"><ks-checkbox>Preferences</ks-checkbox></ks-dropdown-item>
-      <ks-dropdown-item value="print">Print</ks-dropdown-item>
-      <ks-dropdown-item separator/>
-      <ks-dropdown-item value="print_preview">Print preview</ks-dropdown-item>
-      <ks-dropdown-item value="help">Help</ks-dropdown-item>
-    </ks-dropdown>
+      </fx-icon>
+      <fx-dropdown-item value="save">
+        <fx-icon name="account-circle"/>
+      </fx-dropdown-item>
+      <fx-dropdown-item separator/>
+      <fx-dropdown-item disabled value="save_all">Save all</fx-dropdown-item>
+      <fx-dropdown-item value="preferences">Preferences</fx-dropdown-item>
+      <fx-dropdown-item value="print">Print</fx-dropdown-item>
+      <fx-dropdown-item separator/>
+      <fx-dropdown-item value="print_preview">Print preview</fx-dropdown-item>
+      <fx-dropdown-item value="help">Help</fx-dropdown-item>
+    </fx-dropdown>
     Clicked item: {{ selectedItem }}
   </section>
 </template>
 
 <script>
-import ISettings from '@/assets/icons/settings'
-
 export default {
-  components: { ISettings },
-
   data () {
     return {
       selectedItem: ''

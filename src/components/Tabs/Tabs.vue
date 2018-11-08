@@ -1,7 +1,7 @@
 <template>
-  <div class="ks-tabs">
+  <div class="fx-tabs">
     <nav :class="navClasses" :style="{ height: height + 'px' }">
-      <div class="ks-tabs__stroke" ref="stroke" :style="[strokeHeight, strokeColor]"></div>
+      <div class="stroke" ref="stroke" :style="[strokeHeight, strokeColor]"></div>
       <span
         v-for="tab in tabs"
         :key="tab"
@@ -11,7 +11,7 @@
         {{ tab }}
       </span>
     </nav>
-    <ks-animate-height class="ks-tabs__content" :style="backgroundColor">
+    <fx-animate-height class="content" :style="backgroundColor">
       <transition-group tag="div" class="slide" :name="transitionName">
         <div
           v-for="tab in tabs"
@@ -22,13 +22,13 @@
           <slot :name="tab"/>
         </div>
       </transition-group>
-    </ks-animate-height>
+    </fx-animate-height>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ks-tabs',
+  name: 'fx-tabs',
 
   data () {
     return {
@@ -52,13 +52,13 @@ export default {
       return Object.keys(this.$slots)
     },
     backgroundColor: function () {
-      return this.background ? { '--ks-tabs--background-color': `var(--color--${this.background})` } : null
+      return this.background ? { '--fx-tabs--background-color': `var(--color--${this.background})` } : null
     },
     strokeHeight: function () {
       return { height: this.stroke + 'px' }
     },
     strokeColor: function () {
-      return this.color ? { '--ks-tabs--stroke-color': `var(--color--${this.color})` } : null
+      return this.color ? { '--fx-tabs--stroke-color': `var(--color--${this.color})` } : null
     },
     navClasses: function () {
       return {
@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style>
-.ks-tabs {
+.fx-tabs {
   overflow: hidden;
   @mixin font-size 14;
 
@@ -102,16 +102,20 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    box-shadow: inset 0 -1px 0 0 var(--color--border);
-    color: var(--color--font-primary);
+    box-shadow: inset 0 -1px 0 0 var(--color--border-1);
+    color: var(--color--font-1);
     font-weight: var(--font-weight--regular);
 
-    &.is-bold {
-      font-weight: var(--font-weight--medium) !important;
-    }
+    &.is-bold { font-weight: var(--font-weight--medium) !important }
+    &.is-text-secondary { color: var(--color--font-secondary) !important }
 
-    &.is-text-secondary {
-      color: var(--color--font-secondary) !important;
+    .stroke {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      transition-duration: 0.15s;
+      transition-timing-function: var(--easing--inf-outs);
+      background-color: var(--fx-tabs--stroke-color);
     }
 
     span {
@@ -126,17 +130,8 @@ export default {
     }
   }
 
-  &__stroke {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    transition-duration: 0.15s;
-    transition-timing-function: var(--easing--inf-outs);
-    background-color: var(--ks-tabs--stroke-color);
-  }
-
-  &__content {
-    background-color: var(--ks-tabs--background-color);
+  .content {
+    background-color: var(--fx-tabs--background-color);
   }
 
   .slide {

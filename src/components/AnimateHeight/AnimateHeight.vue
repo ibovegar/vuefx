@@ -1,5 +1,5 @@
 <template>
-  <div class="ks-animate-height">
+  <div class="fx-animate-height">
     <slot/>
   </div>
 </template>
@@ -9,7 +9,7 @@ import ResizeObserver from 'resize-observer-polyfill'
 import _throttle from 'lodash/throttle'
 
 export default {
-  name: 'ks-animate-height',
+  name: 'fx-animate-height',
 
   mounted () {
     this.$nextTick(() => {
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style>
-.ks-animate-height {
+.fx-animate-height {
   transition: height 0.4s var(--easing--inf-outs);
 }
 </style>

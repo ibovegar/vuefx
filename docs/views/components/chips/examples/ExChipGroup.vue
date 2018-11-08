@@ -1,14 +1,14 @@
 <template>
   <section>
     <div class="wrapper">
-      <ks-chip-group>
-        <ks-chip background="fill-2" font="primary-in verted" close>Apple</ks-chip>
-        <ks-chip background="fill-2" font="primary-inverted" close>Banana</ks-chip>
-        <ks-chip background="fill-2" font="primary-inverted" close>Orange</ks-chip>
-        <ks-chip background="fill-2" close>Kiwi</ks-chip>
-        <ks-chip background="fill-2" close>Pineapple</ks-chip>
-        <ks-chip background="fill-2" close>Pear</ks-chip>
-      </ks-chip-group>
+      <fx-chip-group>
+        <fx-chip background="fill-2" font="primary-in verted" close>Apple</fx-chip>
+        <fx-chip background="fill-2" font="primary-inverted" close>Banana</fx-chip>
+        <fx-chip background="fill-2" font="primary-inverted" close>Orange</fx-chip>
+        <fx-chip background="fill-2" close>Kiwi</fx-chip>
+        <fx-chip background="fill-2" close>Pineapple</fx-chip>
+        <fx-chip background="fill-2" close>Pear</fx-chip>
+      </fx-chip-group>
     </div>
   </section>
 </template>

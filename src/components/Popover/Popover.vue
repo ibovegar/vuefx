@@ -1,17 +1,14 @@
 <template>
   <span
-    v-click-outside="forceShow ? '' : doClose"
-    class="ks-popover"
+    class="fx-popover"
     :style="{ width: width + 'px' }"
+    v-click-outside="forceShow ? '' : doClose"
     >
-    <transition
-      name=""
-      @after-leave="doDestroy"
-      >
+    <transition @after-leave="doDestroy">
       <span
         v-show="!disabled && showPopper"
         ref="popper"
-        class="ks-popover__popper"
+        class="popper"
         >
         <slot></slot>
       </span>
@@ -26,7 +23,7 @@ import PopperMixin from '@/mixins/popper.js'
 import { on, off } from '@/utils/helpers'
 
 export default {
-  name: 'ks-popover',
+  name: 'fx-popover',
 
   directives: { ClickOutside },
 
@@ -64,10 +61,10 @@ export default {
 </script>
 
 <style>
-.ks-popover {
+.fx-popover {
   width: auto;
 
-  &__popper {
+  .popper {
     width: inherit;
     z-index: var(--z-index--popover);
     border-radius: var(--border-radius--medium);

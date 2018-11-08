@@ -1,6 +1,6 @@
 <template>
-  <ks-dropdown
-    class="ks-select"
+  <fx-dropdown
+    class="fx-select"
     :class="rootClasses"
     :value="value"
     :multiple="multiple"
@@ -26,8 +26,8 @@
         />
       <label v-if="showLabel">{{ label }}</label>
       <span class="focus-border"><i></i></span>
-      <ks-chip-group v-if="showChips">
-        <ks-chip
+      <fx-chip-group v-if="showChips">
+        <fx-chip
           v-for="value in value" :key="value"
           :value="value"
           background="fill-7"
@@ -35,23 +35,19 @@
           close
           >
           {{ getDisplayName(value) }}
-        </ks-chip>
-      </ks-chip-group>
-      <ks-icon name="menu-down" :class="{ 'ks-icon--flip-v': showPopper }"/>
+        </fx-chip>
+      </fx-chip-group>
+      <fx-icon name="menu-down" :class="{ 'flip-v': showPopper }"/>
     </form>
-    <ks-dropdown-item v-for="option in options" :key="option.value" :value="option.value">
+    <fx-dropdown-item v-for="option in options" :key="option.value" :value="option.value">
       {{ option.name }}
-    </ks-dropdown-item>
-  </ks-dropdown>
+    </fx-dropdown-item>
+  </fx-dropdown>
 </template>
 
 <script>
-import MenuDown from '@/assets/icons/menu-down'
-
 export default {
-  name: 'ks-select',
-
-  components: { MenuDown },
+  name: 'fx-select',
 
   data () {
     return {
@@ -74,7 +70,7 @@ export default {
     value: [String, Array],
     appendToBody: Boolean,
     boundariesElement: String,
-    options: { type: Array, required: true, default: () => [] }, // [{ name: String, value: String }, { ... }]
+    options: { type: Array, required: true, default: () => [] },
     theme: {
       type: String,
       default: 'material',
@@ -130,9 +126,10 @@ export default {
 </script>
 
 <style>
-.ks-select {
+.fx-select {
   width: 100%;
-  height: var(--ks-select--height);
+  height: var(--fx-select--height);
+  display: block;
 
   form {
     position: relative;
@@ -163,7 +160,7 @@ export default {
     @mixin font-size 14;
   }
 
-  .ks-chip-group {
+  .fx-chip-group {
     height: 100%;
     padding: 5px 0;
     width: calc(100% - 26px);
@@ -171,7 +168,7 @@ export default {
     .ks-chip { height: auto }
   }
 
-  .ks-icon {
+  .fx-icon {
     margin-left: auto;
     color: var(--color--font);
     transition: transform 0.4s ease;
@@ -216,7 +213,7 @@ export default {
 
   &.is-material {
     form {
-      box-shadow: inset 0 -1px 0 0 var(--color--border-4);
+      box-shadow: inset 0 -1px 0 0 var(--color--border-5);
       &:hover { box-shadow: inset 0 -2px 0 0 var(--color--border-6) }
 
       &:before, &:after {

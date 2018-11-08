@@ -1,18 +1,16 @@
 :root {
-  --ks-chip--height: 34px;
-  --ks-chip--background-color: var(--color--primary);
-  --ks-chip--border-color: transparent;
-  --ks-chip--font-color: var(--color--font);
+  --fx-chip--height: 34px;
+  --fx-chip--background-color: var(--color--primary);
+  --fx-chip--border-color: transparent;
+  --fx-chip--font-color: var(--color--font);
 
-  --ks-tabs--background-color: transparent;
-  --ks-tabs--stroke-color: var(--color--primary);
+  --fx-tabs--background-color: transparent;
+  --fx-tabs--stroke-color: var(--color--primary);
 
-  --ks-select--height: 36px;
+  --fx-select--height: 36px;
 
-  --ks-badge--height: 16px;
+  --fx-badge--height: 16px;
 
-  --ks-tooltip--narrow: 100px;
-  --ks-tooltip--wide: 300px;
-  --tooltip-arrow-size: 5px;
-  --tooltip-arrow-margin: 2px;
+  --fx-tooltip--narrow: 100px;
+  --fx-tooltip--wide: 300px;
 }

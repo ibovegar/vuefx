@@ -1,13 +1,13 @@
 <template>
   <header class="app-top">
     <!--img :src="require('../assets/img/logo.png')" height="40px"/-->
-    <ks-icon name="bug-outline" class="ks-icon--large">Logo</ks-icon>
+    <fx-icon name="bug-outline" class="medium">Logo</fx-icon>
     <h2>VueFX</h2>
-    <!--a>Support <ks-icon name="chevron-down"/></a>
-    <a>Support <ks-icon name="chevron-down"/></a>
-    <ks-icon name="github-circle"/-->
+    <!--a>Support <fx-icon name="chevron-down"/></a>
+    <a>Support <fx-icon name="chevron-down"/></a>
+    <fx-icon name="github-circle"/-->
      <section class="right">
-      <ks-select
+      <fx-select
         :min-width="200"
         :options="themes"
         theme="boxed"
@@ -18,14 +18,8 @@
 </template>
 
 <script>
-import IGithubCircle from '@/assets/icons/github-circle'
-import IInvertColors from '@/assets/icons/invert-colors'
-import IChevronDown from '@/assets/icons/chevron-down'
-
 export default {
   name: 'app-header',
-
-  components: { IInvertColors, IGithubCircle, IChevronDown },
 
   data () {
     return {
@@ -49,7 +43,7 @@ export default {
   padding-left: 30px;
   align-items: center;
 
-  .ks-icon[name="bug-outline"] {
+  .fx-icon[name="bug-outline"] {
     color: var(--color--secondary);
   }
 
@@ -67,11 +61,11 @@ export default {
     color: var(--color--primary);
   }
 
-  .ks-icon {
+  .fx-icon {
     color: var(--color--font-secondary);
   }
 
-  .ks-icon + .ks-icon {
+  .fx-icon + .fx-icon {
     margin-left: var(--spacing--small);
   }
 
@@ -80,7 +74,7 @@ export default {
     margin-left: auto;
     @mixin v-align-children;
 
-    .ks-select {
+    .fx-select {
       height: 40px;
     }
   }

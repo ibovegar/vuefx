@@ -1,10 +1,10 @@
 <template>
   <section>
-    <ks-tabs v-model="currentTab">
+    <fx-tabs v-model="currentTab">
       <div slot="Template">Lorem ipsum</div>
       <div slot="Javascript">Dolor</div>
       <div slot="Stylesheet">Sit amet</div>
-    </ks-tabs>
+    </fx-tabs>
   </section>
 </template>
 
@@ -17,6 +17,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>

@@ -1,17 +1,26 @@
 <template>
   <section>
-    <ks-button @button-clicked="selectedItems = ['print']">Select print</ks-button>
-    <ks-dropdown v-model="selectedItems" multiple focus-color focus-check>
-      <ks-button slot="trigger">Main menu</ks-button>
-      <ks-dropdown-item value="save" close-popover>Save</ks-dropdown-item>
-      <ks-dropdown-item separator/>
-      <ks-dropdown-item disabled value="save_all">Save all</ks-dropdown-item>
-      <ks-dropdown-item value="preferences">Preferences</ks-dropdown-item>
-      <ks-dropdown-item value="print">Print</ks-dropdown-item>
-      <ks-dropdown-item separator/>
-      <ks-dropdown-item value="print_preview">Print preview</ks-dropdown-item>
-      <ks-dropdown-item value="help"><ks-icon><account-circle/></ks-icon>User account</ks-dropdown-item>
-    </ks-dropdown>
+    <fx-button @button-clicked="selectedItems = ['print']">
+      Select print
+    </fx-button>
+    <fx-dropdown
+      v-model="selectedItems"
+      multiple
+      focus-color
+      focus-check
+      >
+      <fx-button slot="trigger">Main menu</fx-button>
+      <fx-dropdown-item value="save" close-popover>Save</fx-dropdown-item>
+      <fx-dropdown-item separator/>
+      <fx-dropdown-item disabled value="save_all">Save all</fx-dropdown-item>
+      <fx-dropdown-item value="preferences">Preferences</fx-dropdown-item>
+      <fx-dropdown-item value="print">Print</fx-dropdown-item>
+      <fx-dropdown-item separator/>
+      <fx-dropdown-item value="print_preview">Print preview</fx-dropdown-item>
+      <fx-dropdown-item value="help">
+        <fx-icon name="account-circle"/>User account
+      </fx-dropdown-item>
+    </fx-dropdown>
     <p>
       Selected items: {{ selectedItems }}
     </p>
@@ -19,11 +28,7 @@
 </template>
 
 <script>
-import AccountCircle from '@/assets/icons/account-circle'
-
 export default {
-  components: { AccountCircle },
-
   data () {
     return {
       selectedItems: []

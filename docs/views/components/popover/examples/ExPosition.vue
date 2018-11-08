@@ -1,21 +1,21 @@
 <template>
   <section>
-    <ks-popover :options="{ placement: 'bottom' }">
-      <ks-button slot="trigger">BOTTOM</ks-button>
+    <fx-popover :options="{ placement: 'bottom' }">
+      <fx-button slot="trigger">BOTTOM</fx-button>
       <p>Bottom</p>
-    </ks-popover>
-    <ks-popover :options="{ placement: 'top' }">
-      <ks-button slot="trigger">TOP</ks-button>
+    </fx-popover>
+    <fx-popover :options="{ placement: 'top' }">
+      <fx-button slot="trigger">TOP</fx-button>
       <p>Top</p>
-    </ks-popover>
-    <ks-popover :options="{ placement: 'left' }">
-      <ks-button slot="trigger">LEFT</ks-button>
+    </fx-popover>
+    <fx-popover :options="{ placement: 'left' }">
+      <fx-button slot="trigger">LEFT</fx-button>
       <p>Left</p>
-    </ks-popover>
-    <ks-popover :options="{ placement: 'right' }">
-      <ks-button slot="trigger">RIGHT</ks-button>
+    </fx-popover>
+    <fx-popover :options="{ placement: 'right' }">
+      <fx-button slot="trigger">RIGHT</fx-button>
       <p>Right</p>
-    </ks-popover>
+    </fx-popover>
   </section>
 </template>
 

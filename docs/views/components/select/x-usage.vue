@@ -1,16 +1,16 @@
 <template>
   <section>
     <div class="wrapper">
-      <ks-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-      <ks-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-      <ks-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-      <ks-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
     </div>
     <div class="wrapper">
-      <ks-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-      <ks-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-      <ks-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-      <ks-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
     </div>
   </section>
 </template>
@@ -40,7 +40,7 @@ div + div {
   display: flex;
   flex-direction: row;
 
-  .ks-select {
+  .fx-select {
     margin-right: 20px;
   }
 }

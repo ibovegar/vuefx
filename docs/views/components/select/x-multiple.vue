@@ -1,7 +1,7 @@
 <template>
   <section>
     <component-debug :width="50">
-      <ks-select
+      <fx-select
         label="Selected fruits"
         transition="slide-down"
         :options="types"

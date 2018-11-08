@@ -1,28 +1,25 @@
 <template>
   <section>
-    <ks-popover>
-      <ks-icon slot="trigger"><icon-close/></ks-icon>
+    <fx-popover>
+      <fx-icon slot="trigger" name="icon-close"/>
       <p close-popover>Click here to close</p>
-    </ks-popover>
-    <ks-popover>
-      <ks-button
+    </fx-popover>
+    <fx-popover>
+      <fx-button
         custom-color="primary"
         size="medium"
         :fluid="true"
         slot="trigger"
         >
         SHOW POPOVER
-        </ks-button>
+        </fx-button>
       <p close-popover>Click here to close</p>
-    </ks-popover>
+    </fx-popover>
   </section>
 </template>
 
 <script>
-import IconClose from '@/assets/icons/close'
-
 export default {
-  components: { IconClose }
 }
 </script>
 

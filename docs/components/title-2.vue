@@ -1,6 +1,6 @@
 <template>
   <div class="title-2">
-    <h2>{{ title }}<ks-icon name="link-variant"/></h2>
+    <h2>{{ title }}<fx-icon name="link-variant"/></h2>
     <p v-if="$slots.default && $slots.default.length"><slot/></p>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
     @mixin font-size 14;
    }
 
-  .ks-icon {
+  .fx-icon {
     margin-left: 8px;
     color: var(--color--primary);
     cursor: pointer;

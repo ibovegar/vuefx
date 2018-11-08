@@ -36,7 +36,7 @@ export default {
   padding-top: var(--spacing--large);
 
   .toc {
-    color: var(--color--font-1);
+    color: var(--color--font-2);
     margin-right: var(--spacing--huge);
     @mixin font-size 13;
 
@@ -55,11 +55,9 @@ export default {
 
     &_2 {
       padding-left: 30px;
-      color: var(--color--font-2);
     }
 
     .selected {
-      font-weight: var(--font-weight--medium);
       box-shadow: inset 2px 0 0 var(--color--primary);
       color: var(--color--primary);
     }

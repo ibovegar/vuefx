@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="ks-icon"
+    class="fx-icon"
     :name="name"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -16,83 +16,47 @@
 
 <script>
 export default {
-  name: 'ks-icon',
+  name: 'fx-icon',
 
   props: {
     name: String,
-    viewBox: {
-      type: Number,
-      default: 24
-    },
-    iconName: {
-      type: String,
-      default: 'box'
-    },
-    size: {
-      type: [Number, String],
-      default: 24
-    },
-    iconColor: {
-      type: String,
-      default: 'currentColor'
-    }
+    viewBox: { type: Number, default: 24 },
+    iconName: { type: String, default: 'box' },
+    size: { type: [Number, String], default: 24 },
+    iconColor: { type: String, default: 'currentColor' }
   }
 }
 </script>
 
-<style scoped>
-.ks-icon {
+<style>
+.fx-icon {
   vertical-align: middle;
   display: inline-block;
 
-  &--right {
-    transform: rotate(0deg);
-  }
+  &.right { transform: rotate(0deg) }
+  &.primary { color: var(--color--primary) }
+  &.secondary { color: var(--color--secondary) }
+  &.flip-v { transform: rotate(-180deg) }
+  &.up { transform: rotate(-90deg) }
+  &.right { transform: rotate(0deg) } /*default*/
+  &.down { transform: rotate(90deg) }
 
-  &--primary {
-    color: var(--color--primary);
-  }
-
-  &--secondary {
-    color: var(--color--secondary);
-  }
-
-  &--flip-v {
-    transform: rotate(-180deg);
-  }
-
-  &--up {
-    transform: rotate(-90deg);
-  }
-
-  &--right {
-    /*default*/
-    transform: rotate(0deg);
-  }
-
-  &--down {
-    transform: rotate(90deg);
-  }
-
-  &--left {
-  }
-
-  &--tiny {
+  &.tiny {
     height: var(--icon-size--tiny) !important;
     width: var(--icon-size--tiny) !important;
   }
 
-  &--small {
+  &.small {
     height: var(--icon-size--small) !important;
     width: var(--icon-size--small) !important;
   }
 
-  &--medium {
+  &.medium {
     height: var(--icon-size--medium) !important;
     width: var(--icon-size--medium) !important;
   }
 
-  &--large {
+  &.large {
     height: var(--icon-size--large) !important;
     width: var(--icon-size--large) !important;
   }

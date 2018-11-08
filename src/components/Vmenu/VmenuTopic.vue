@@ -1,6 +1,6 @@
 <template>
   <li
-    class="ks-vmenu-topic"
+    class="fx-vmenu-topic"
     :class="{ 'is-selected': $parent.$parent.value === value }"
     @click="$parent.$parent.selectItem(value)"
     >
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'ks-vmenu-topic',
+  name: 'fx-vmenu-topic',
 
   props: {
     value: String,
@@ -20,14 +20,17 @@ export default {
 </script>
 
 <style>
-.ks-vmenu-topic {
-  border-left: 2px solid var(--color--border-2);
-  margin-left: var(--spacing--medium);
+.fx-vmenu-topic {
+  border-left: 2px solid var(--color--border-3);
+  margin-left: var(--spacing--large);
   padding-left: var(--spacing--medium);
-  opacity: 0.7;
+
+  &.is-selected {
+    border-left: 2px solid var(--color--primary) !important;
+  }
 
   &:hover {
-    background-color: var(--color--fill);
+    background-color: var(--color--fill-4);
   }
 }
 </style>

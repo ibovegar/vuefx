@@ -7,7 +7,7 @@
       :key="component.name"
       >
       <h3 v-if="component.name">{{ component.name }}</h3>
-      <ks-tabs v-model="selected" background="flat">
+      <fx-tabs v-model="selected" background="flat">
         <template slot="Props" v-if="component.props && component.props.length">
           Lorem
           <!--ks-table :data-set="component.props" :bold="0" :faint="4"/-->
@@ -24,7 +24,7 @@
           Sit amet
           <!--ks-table :data-set="component.events" :highlight="0"/-->
         </template>
-      </ks-tabs>
+      </fx-tabs>
     </div>
   </div>
 </template>

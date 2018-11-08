@@ -1,9 +1,9 @@
 <template>
   <div class="color-playground">
     <span class="left">
-      <ks-select v-model="currentFill" :height="40" label="Fill color" :options="fill"/>
-      <ks-select v-model="currentBorder" :height="40" label="Border color" :options="border"/>
-      <ks-select v-model="currentFont" :height="40" label="Font color" :options="font"/>
+      <fx-select v-model="currentFill" :height="40" label="Fill color" :options="fill"/>
+      <fx-select v-model="currentBorder" :height="40" label="Border color" :options="border"/>
+      <fx-select v-model="currentFont" :height="40" label="Font color" :options="font"/>
     </span>
     <span class="right">
       <div :style="cssProps">Lorem ipsum dolor sit amet.</div>
@@ -53,7 +53,7 @@ export default {
     width: 30%;
     padding: 20px 40px;
 
-    .ks-select {
+    .fx-select {
       margin: 25px 0;
     }
   }

@@ -7,14 +7,14 @@
     <title-3 v-if="isExample" :title="title"><slot/></title-3>
     <title-2 v-else :title="title"><slot/></title-2>
     <div class="box">
-      <ks-tabs v-model="selectedTab" @input="onTabChange" background="fill-4"> <!--color="primary"-->
+      <fx-tabs v-model="selectedTab" @input="onTabChange" background="fill-4">
         <component slot="Result" class="box__result" :is="component" ref="component"/>
         <code-preview v-if="code.template" slot="HTML" type="html" :code="code.template"/>
         <code-preview v-if="code.script" slot="JS" type="javascript" :code="code.script"/>
         <code-preview v-if="code.style" slot="CSS" type="css" :code="code.style"/>
-      </ks-tabs>
+      </fx-tabs>
       <div class="box__tools">
-        <ks-dropdown
+        <fx-dropdown
           v-model="selectedTheme"
           @input="selectedTheme = selectedTheme >= 2 ? 0 : selectedTheme + 1"
           auto-width
@@ -22,23 +22,23 @@
           close-on-click
           overlay
           >
-          <ks-icon slot="trigger" name="invert-colors"/>
-          <ks-dropdown-item value="default">Default</ks-dropdown-item>
-          <ks-dropdown-item value="light">Light</ks-dropdown-item>
-          <ks-dropdown-item value="dark">Dark</ks-dropdown-item>
-        </ks-dropdown>
-        <ks-dropdown auto-width close-on-click overlay>
-          <ks-icon slot="trigger" name="dots-vertical"/>
-          <ks-dropdown-item value="debug" :disabled="!enableDebugging" @click.native="toggleDebugger">
-            <ks-icon name="bug-outline"/>&nbsp; Toggle debug mode
-          </ks-dropdown-item>
-          <ks-dropdown-item value="github">
-            <ks-icon name="github-circle"/>&nbsp; Go to github page
-          </ks-dropdown-item>
-          <ks-dropdown-item value="codepen">
-            <ks-icon name="codepen"/>&nbsp; Open in codepen
-          </ks-dropdown-item>
-        </ks-dropdown>
+          <fx-icon slot="trigger" name="invert-colors"/>
+          <fx-dropdown-item value="default">Default</fx-dropdown-item>
+          <fx-dropdown-item value="light">Light</fx-dropdown-item>
+          <fx-dropdown-item value="dark">Dark</fx-dropdown-item>
+        </fx-dropdown>
+        <fx-dropdown auto-width close-on-click overlay>
+          <fx-icon slot="trigger" name="dots-vertical"/>
+          <fx-dropdown-item value="debug" :disabled="!enableDebugging" @click.native="toggleDebugger">
+            <fx-icon name="bug-outline"/>&nbsp; Toggle debug mode
+          </fx-dropdown-item>
+          <fx-dropdown-item value="github">
+            <fx-icon name="github-circle"/>&nbsp; Go to github page
+          </fx-dropdown-item>
+          <fx-dropdown-item value="codepen">
+            <fx-icon name="codepen"/>&nbsp; Open in codepen
+          </fx-dropdown-item>
+        </fx-dropdown>
       </div>
     </div>
   </div>
@@ -125,8 +125,8 @@ export default {
       top: 8px;
       right: 0;
 
-      .ks-icon {
-        color: var(--color--font-1);
+      .fx-icon {
+        color: var(--color--font-2);
         cursor: pointer;
         width: 10px;
         border-radius: 100%;
@@ -141,7 +141,7 @@ export default {
       padding: var(--spacing--huge);
     }
 
-    .ks-tabs {
+    .fx-tabs {
       border-bottom-left-radius: var(--border-radius--medium);
       border-bottom-right-radius: var(--border-radius--medium);
     }

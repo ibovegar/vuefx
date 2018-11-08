@@ -1,32 +1,31 @@
 <template>
   <aside class="app-left">
-    <ks-vmenu v-model="selectedNavItem" vue-router>
-      <ks-vmenu-category value="/quick_start" label="Quick start" expanded>
-        <ks-vmenu-topic value="/installation" label="Installation"/>
-        <ks-vmenu-topic value="/usage" label="Usage & other"/>
-      </ks-vmenu-category>
-      <ks-vmenu-category value="/themes" label="Themes"/>
-      <ks-vmenu-category value="/colors" label="Colors"/>
-      <ks-vmenu-category value="/customization" label="Customization" expanded>
-        <ks-vmenu-topic value="/tabs" label="Tabs"/>
-        <ks-vmenu-topic value="/badge" label="Badge"/>
-        <ks-vmenu-topic value="/button" label="Button"/>
-      </ks-vmenu-category>
-      <ks-vmenu-category value="/typograpy" label="Typograpy"/>
-      <ks-vmenu-category value="/typograpy" label="Application layout"/>
-      <ks-vmenu-category value="/icons" label="Icons"/>
-      <ks-vmenu-category label="Components">
-        <ks-vmenu-topic value="/badge" label="Badge"/>
-        <ks-vmenu-topic value="/chips" label="Chips"/>
-        <ks-vmenu-topic value="/dropdown" label="Dropdown"/>
-        <ks-vmenu-topic value="/popover" label="Popover"/>
-        <ks-vmenu-topic value="/select" label="Select"/>
-        <ks-vmenu-topic value="/tabs" label="Tabs"/>
-        <ks-vmenu-topic value="/tree" label="Tree"/>
-        <ks-vmenu-topic value="/tooltip" label="Tooltip"/>
-        <ks-vmenu-topic value="/vmenu" label="Vmenu"/>
-      </ks-vmenu-category>
-    </ks-vmenu>
+    <fx-vmenu v-model="selectedNavItem" vue-router>
+      <fx-vmenu-category value="/quick_start" label="Quick start" expanded>
+        <fx-vmenu-topic value="/installation" label="Installation"/>
+        <fx-vmenu-topic value="/usage" label="Usage & other"/>
+      </fx-vmenu-category>
+      <fx-vmenu-category value="/themes" label="Themes"/>
+      <fx-vmenu-category value="/colors" label="Colors"/>
+      <fx-vmenu-category value="/customization" label="Customization" expanded>
+        <fx-vmenu-topic value="/tabs" label="Tabs"/>
+        <fx-vmenu-topic value="/badge" label="Badge"/>
+        <fx-vmenu-topic value="/button" label="Button"/>
+      </fx-vmenu-category>
+      <fx-vmenu-category value="/typograpy" label="Typograpy"/>
+      <fx-vmenu-category value="/typograpy" label="Application layout"/>
+      <fx-vmenu-category value="/icons" label="Icons"/>
+      <fx-vmenu-category label="Components">
+        <fx-vmenu-topic value="/badge" label="Badge"/>
+        <fx-vmenu-topic value="/chips" label="Chips"/>
+        <fx-vmenu-topic value="/dropdown" label="Dropdown"/>
+        <fx-vmenu-topic value="/popover" label="Popover"/>
+        <fx-vmenu-topic value="/select" label="Select"/>
+        <fx-vmenu-topic value="/tabs" label="Tabs"/>
+        <fx-vmenu-topic value="/tooltip" label="Tooltip"/>
+        <fx-vmenu-topic value="/vmenu" label="Vmenu"/>
+      </fx-vmenu-category>
+    </fx-vmenu>
   </aside>
 </template>
 
@@ -54,12 +53,11 @@ export default {
   background-color: var(--color--fill-2);
   border-right: 1px solid var(--color--border-2);
 
-  .ks-vmenu {
-    padding-left: var(--spacing--large);
-    padding-right: var(--spacing--large);
+  .fx-vmenu {
+    //padding-left: var(--spacing--large);
+    //padding-right: var(--spacing--large);
     padding-top: var(--spacing--huge);
     flex: 1;
-    @mixin font-size 13;
   }
 }
 </style>

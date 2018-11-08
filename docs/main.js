@@ -5,7 +5,6 @@ import router from './router'
 import VueHighlightJS from 'vue-highlightjs'
 import VueUiToolkit from '../src'
 import Icons from '../src/assets/icons'
-import ComponentHeader from './components/component-header'
 import ComponentExamples from './components/component-examples'
 import ComponentDebug from './components/component-debug'
 import ComponentDemo from './components/component-demo'
@@ -21,7 +20,6 @@ Vue.use(VueUiToolkit)
 Vue.use(VueHighlightJS)
 Vue.use(Icons)
 
-Vue.component('ComponentHeader', ComponentHeader)
 Vue.component('ComponentExamples', ComponentExamples)
 Vue.component('ComponentDebug', ComponentDebug)
 Vue.component('ComponentDemo', ComponentDemo)

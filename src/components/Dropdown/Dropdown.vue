@@ -1,6 +1,6 @@
 <template>
   <span
-    class="ks-dropdown"
+    class="fx-dropdown"
     v-click-outside="doClose"
     >
     <transition
@@ -11,7 +11,7 @@
       <span
         v-show="showPopper"
         ref="popper"
-        class="ks-dropdown__popper"
+        class="popper"
         >
         <ul
           ref="list"
@@ -19,7 +19,7 @@
           >
           <slot/>
         </ul>
-        <div v-else class="ks-dropdown__placeholder">Empty</div>
+        <div v-else class="placeholder">Empty</div>
       </span>
     </transition>
     <slot name="trigger"/>
@@ -32,7 +32,7 @@ import ClickOutside from '@/directives/click-outside'
 import { on, off } from '@/utils/helpers'
 
 export default {
-  name: 'ks-dropdown',
+  name: 'fx-dropdown',
 
   directives: { ClickOutside },
 
@@ -44,9 +44,9 @@ export default {
     focusColor: Boolean,
     focusCheckmark: Boolean,
     showCheckbox: Boolean,
-    focusBackground: { type: Boolean, default: true },
     multiple: Boolean,
     closeOnClick: Boolean,
+    focusBackground: { type: Boolean, default: true },
     transition: {
       type: String,
       default: 'scale-top-left',
@@ -136,21 +136,17 @@ export default {
 </script>
 
 <style>
-.ks-dropdown {
-  display: block;
-
-  &__popper {
+.fx-dropdown {
+  .popper {
     z-index: var(--z-index--popover);
     background: var(--color--fill-1);
     border-radius: var(--border-radius--small);
-    transform-style: preserve-3d;
     padding: var(--spacing--small) 0;
+    transform-style: preserve-3d;
     @mixin elevation 7;
     @mixin font-size 14;
 
-    &:focus {
-      outline: none;
-    }
+    &:focus { outline: none }
 
     &[x-out-of-boundaries] {
       display: hidden;
@@ -158,10 +154,10 @@ export default {
     }
   }
 
-  &__placeholder {
+  .placeholder {
     padding: var(--spacing--medium);
     font-weight: var(--font-weight--regular);
-    color: var(--color--font);
+    color: var(--color--font-1);
     @mixin font-size 14;
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <ks-tabs v-model="selectedPalette">
+  <fx-tabs v-model="selectedPalette">
     <article slot="Background">
       <span
         v-for="color in fill"
@@ -27,7 +27,7 @@
         <h1>{{ color.name }}</h1>
       </span>
     </article>
-  </ks-tabs>
+  </fx-tabs>
 </template>
 
 <script>
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style scoped>
-.ks-tabs {
+.fx-tabs {
   border-radius: var(--border-radius--medium);
   background-color: var(--color--fill-3);
 }
@@ -59,7 +59,6 @@ article {
   color: var(--color--font-4);
   display: flex;
   flex-direction: row;
-  @mixin elevation 3;
 
   span {
     flex-grow: 1;

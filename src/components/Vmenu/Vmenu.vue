@@ -1,5 +1,5 @@
 <template>
-  <div class="ks-vmenu">
+  <div class="fx-vmenu">
     <ul>
       <slot/>
     </ul>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'ks-vmenu',
+  name: 'fx-vmenu',
 
   props: {
     value: String
@@ -38,10 +38,11 @@ export default {
 </script>
 
 <style>
-.ks-vmenu {
+.fx-vmenu {
   text-align: left;
-  //font-weight: var(--font-weight--medium);
-  color: var(--color--font-1);
+  color: var(--color--font-2);
+  padding-left: var(--spacing--large);
+  padding-right: var(--spacing--small);
   @mixin font-size 14;
 
   ul {
@@ -51,6 +52,7 @@ export default {
 
     li {
       line-height: 40px;
+      cursor: pointer;
 
       span {
         position: relative;

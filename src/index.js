@@ -7,7 +7,6 @@ import Badge from './components/Badge'
 import Icon from './components/Icon'
 import Popover from './components/Popover'
 import Tabs from './components/Tabs'
-import Tree from './components/Tree'
 import Select from './components/Select'
 import { Chip, ChipGroup } from './components/Chip'
 import { Dropdown, DropdownItem } from './components/Dropdown'
@@ -15,7 +14,7 @@ import { Vmenu, VmenuCategory, VmenuTopic } from './components/Vmenu'
 
 const components = {
   AnimateHeight, Badge, Chip, ChipGroup, Dropdown, DropdownItem,
-  Icon, Popover, Select, Tree, Tabs, Vmenu, VmenuCategory,
+  Icon, Popover, Select, Tabs, Vmenu, VmenuCategory,
   VmenuTopic
 }
 

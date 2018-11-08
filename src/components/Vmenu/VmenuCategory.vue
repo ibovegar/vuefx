@@ -1,19 +1,19 @@
 <template>
-  <li class="ks-vmenu-category">
+  <li class="fx-vmenu-category">
     <div
       :class="{ 'is-selected': $parent.value === value }"
       @click="selectCategory"
       >
-      <ks-icon
+      <fx-icon
         v-if="$slots.default"
-        :class="{ 'ks-icon--down' : isExpanded }"
-        name="chevron-right"
+        :class="{ 'down' : isExpanded }"
+        name="menu-right"
         />
       <span>{{ label }}</span>
     </div>
     <ul
       ref="topics"
-      class="ks-vmenu-category__topics"
+      class="topics"
       >
       <slot/>
     </ul>
@@ -24,7 +24,7 @@
 import Expandable from '@/mixins/expandable.js'
 
 export default {
-  name: 'ks-vmenu-category',
+  name: 'fx-vmenu-category',
 
   mixins: [ Expandable ],
 
@@ -67,33 +67,31 @@ export default {
 </script>
 
 <style>
-.ks-vmenu-category {
+.fx-vmenu-category {
   & > div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: var(--spacing--medium);
+    padding-left: var(--spacing--large);
     padding-right: var(--spacing--small);
 
     &:hover {
-      background-color: var(--color--fill-0);
+      background-color: var(--color--fill-5);
     }
-
-    .ks-icon {
+    .fx-icon {
       order: 1;
       margin-left: auto;
       transition: all 0.5s var(--transition--ease-in-out);
     }
   }
 
-  &__topics {
+  .topics {
     height: auto;
     transition: height 0.3s var(--transition--ease-in-out);
     overflow: hidden;
   }
 
   .is-selected {
-    border-left: 2px solid var(--color--primary) !important;
     color: var(--color--primary);
     font-weight: var(--font-weight--medium);
   }

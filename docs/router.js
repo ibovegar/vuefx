@@ -27,7 +27,6 @@ export default new Router({
     route('dropdown', 'components/dropdown/Dropdown'),
     route('badge', 'components/badge/index'),
     route('chips', 'components/chips/Chips'),
-    route('tree', 'components/tree/Tree'),
     route('select', 'components/select/index'),
     route('tabs', 'components/tabs/Tabs')
   ]

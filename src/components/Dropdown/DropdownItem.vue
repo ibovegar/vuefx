@@ -1,21 +1,22 @@
 <template>
   <li
-    class="ks-dropdown-item"
+    class="fx-dropdown-item"
     :class="[rootClasses, selectedClass]"
     @click="$parent.selectItem(value, $event.target)"
     >
-    <ks-checkbox
+    <!--fx-checkbox
       v-if="$parent.showCheckbox"
       v-model="isSelected"
-      passive>
+      passive
+      >
       <slot/>
-    </ks-checkbox>
-    <template v-else>
+    </fx-checkbox-->
+    <!--template v-else-->
       <slot/>
-    </template>
-    <ks-icon
+    <!--/template-->
+    <fx-icon
       v-if="isSelected && $parent.focusCheckmark"
-      class="checkmark ks-icon--tiny"
+      class="checkmark tiny"
       name="checkmark"
       />
   </li>
@@ -23,7 +24,7 @@
 
 <script>
 export default {
-  name: 'ks-dropdown-item',
+  name: 'fx-dropdown-item',
 
   props: {
     value: { type: String, default: null },
@@ -57,13 +58,13 @@ export default {
 </script>
 
 <style>
-.ks-dropdown-item {
+.fx-dropdown-item {
   padding: var(--spacing--medium);
   font-weight: var(--font-weight--regular);
+  color: var(--color--font-1);
   cursor: pointer;
   text-align: left;
   cursor: pointer;
-  color: var(--color--font);
   white-space: nowrap;
   margin: 1px 0;
   position: relative;
@@ -77,9 +78,7 @@ export default {
     outline: none;
   }
 
-  &.has-focus {
-    background-color: var(--color--fill-3);
-  }
+  &.has-focus { background-color: var(--color--fill-3) }
 
   &.is-separator {
     background-color: var(--color--fill-6);
