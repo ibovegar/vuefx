@@ -1,0 +1,2 @@
+index.css is the entry style entry file and is imported
+by the style-resource-loader. See vue.config.js for details.

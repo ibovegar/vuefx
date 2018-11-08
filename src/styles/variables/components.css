@@ -1,0 +1,18 @@
+:root {
+  --ks-chip--height: 34px;
+  --ks-chip--background-color: var(--color--primary);
+  --ks-chip--border-color: transparent;
+  --ks-chip--font-color: var(--color--font);
+
+  --ks-tabs--background-color: transparent;
+  --ks-tabs--stroke-color: var(--color--primary);
+
+  --ks-select--height: 36px;
+
+  --ks-badge--height: 16px;
+
+  --ks-tooltip--narrow: 100px;
+  --ks-tooltip--wide: 300px;
+  --tooltip-arrow-size: 5px;
+  --tooltip-arrow-margin: 2px;
+}

@@ -1,0 +1,36 @@
+:root, [theme="light"] {
+  --color--primary: #8100FA;
+  --color--secondary: #BA4DFF;
+  --color--accent:#FFAD00;
+  --color--success: #03AABF;
+  --color--info: #027BD0;
+  --color--warning: #FFAD00;
+  --color--alert: #FF4931; /* #DE1A3A */
+
+  --color--link: #BA4DFF;
+  --color--link-hover: #8100FA;
+
+  --color--overlay-primary: hsla(0, 0%, 0%, 0.5);
+  --color--overlay-secondary: hsla(277, 100%, 65%), 0.1);
+
+  --color--fill-1: hsl(0, 0%, 100%);
+  --color--fill-2: hsl(200, 15%, 98%);
+  --color--fill-3: hsl(210, 15%, 97%);
+  --color--fill-4: hsl(210, 15%, 95%);
+  --color--fill-5: hsl(200, 10%, 92%);
+  --color--fill-6: hsl(200, 10%, 90%);
+
+  --color--border-1: hsl(200, 5%, 95%);
+  --color--border-2: hsl(200, 5%, 90%);
+  --color--border-3: hsl(200, 5%, 85%);
+  --color--border-4: hsl(200, 5%, 70%);
+  --color--border-5: hsl(200, 5%, 50%);
+  --color--border-6: hsl(200, 5%, 30%);
+
+  --color--font-1: hsl(0, 0%, 0%);
+  --color--font-2: hsl(200, 10%, 25%);
+  --color--font-3: hsl(200, 10%, 35%);
+  --color--font-4: hsl(200, 6%, 50%);
+  --color--font-5: hsl(200, 8%, 65%);
+  --color--font-i: hsl(0, 0%, 100%);
+}

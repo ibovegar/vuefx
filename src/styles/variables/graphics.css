@@ -1,0 +1,13 @@
+:root {
+  --icon-size--tiny: 18px;
+  --icon-size--small: 24px;
+  --icon-size--medium: 36px;
+  --icon-size--large: 48px;
+
+  --border-radius--small: 3px;
+  --border-radius--medium: 5px;
+  --border-radius--large: 8px;
+
+  --easing--inf-outs: cubic-bezier(.55,0,.1,1);
+  --easing--outs: cubic-bezier(.25,.8,.5,1);
+}
