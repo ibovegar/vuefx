@@ -66,7 +66,7 @@ export default {
     title: String,
     component: [Object, Function],
     code: Object,
-    noPadding: Boolean,
+    noPadding: Boolean
   },
 
   computed: {
