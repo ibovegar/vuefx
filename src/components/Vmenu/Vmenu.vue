@@ -11,13 +11,13 @@ export default {
   name: 'fx-vmenu',
 
   props: {
-    value: String
+    value: String,
+    vueRouter: Boolean
   },
 
   data () {
     return {
-      expandedItems: [],
-      vueRouter: false
+      expandedItems: []
     }
   },
 
@@ -26,12 +26,6 @@ export default {
       this.$emit('input', item)
 
       if (this.vueRouter) this.$router.push({ path: item })
-    }
-  },
-
-  mounted () {
-    if (this.$attrs.hasOwnProperty('vue-router')) {
-      this.vueRouter = true
     }
   }
 }
