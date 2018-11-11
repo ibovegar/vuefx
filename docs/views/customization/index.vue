@@ -7,6 +7,31 @@
     <component-demo title="Example 1: custom sidebar" :component="Sidebar" :code="SidebarCode">
       The example below show how to customize a sidebar to stay dark even when the app is switched to  mode.
     </component-demo>
+    Component styles are customized by changing the css custom properties within a certain component
+    css scope. Imagine that a power puff girl is about to make a web app and is aiming for a pink color scheme.
+    If she wishes to change the fx-chip's default background color to dark pink she would have to
+    modify the following css rule:
+
+    .fx-chip {
+      --color--fill: dark-pink;
+    }
+
+    This override can be placed within the app entry ID css tag (e.g. #app) or imported as an
+    external file using webpack's postcss-import plugin and placed within the :root scope. A typical
+    config file would look like this:
+
+    :root {
+      --color--primary: blue;
+    }
+
+    .fx-select {
+      --color--fill: var(--color--primary);
+    }
+
+    .fx-whatever {
+      ...
+    }
+
     <!--section>
       <pre>
         /* Override color for a specific component at a certain place (i.e. not global).
