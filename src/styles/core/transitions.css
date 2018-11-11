@@ -32,3 +32,12 @@
   opacity: 0;
 }
 
+.scale-enter-active, .scale-leave-active {
+  transition: transform 0.3s var(--easing--outs), opacity 0.3s var(--easing--outs);
+  transform: scale(1);
+}
+
+.scale-enter, .scale-leave-to {
+  transform: scale(0.1);
+  opacity: 0;
+}
