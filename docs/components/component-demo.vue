@@ -65,7 +65,8 @@ export default {
   props: {
     title: String,
     component: [Object, Function],
-    code: Object
+    code: Object,
+    noPadding: Boolean,
   },
 
   computed: {
@@ -78,7 +79,8 @@ export default {
     },
     rootClasses: function () {
       return {
-        'is-example': this.isExample
+        'is-example': this.isExample,
+        'no-padding': this.noPadding
       }
     },
     enableDebugging: function () {
@@ -117,6 +119,12 @@ export default {
     }
   }
 
+  &.no-padding {
+    .box__result {
+      padding: 0;
+    }
+  }
+
   .box {
     position: relative;
 
@@ -142,7 +150,7 @@ export default {
     }
 
     .fx-tabs {
-      @mixin font-size 16;
+      @mixin font-size 15;
       border-bottom-left-radius: var(--border-radius--medium);
       border-bottom-right-radius: var(--border-radius--medium);
     }
