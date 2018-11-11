@@ -1,5 +1,5 @@
 code.tag {
-  color: var(--color--secondary);/*#ee7600;*/
+  color: var(--color--alert);
   padding: 2px 6px;
   @mixin elevation 1;
   @mixin font-size 12;
