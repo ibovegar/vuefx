@@ -37,7 +37,6 @@ export default {
 
   .toc {
     color: var(--color--font-2);
-    margin-right: var(--spacing--huge);
     @mixin font-size 13;
 
     &_1, &_2, .title {

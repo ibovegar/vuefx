@@ -1,18 +1,28 @@
 <template>
   <header class="app-top">
-    <!--img :src="require('../assets/img/logo.png')" height="40px"/-->
-    <fx-icon name="bug-outline" class="medium">Logo</fx-icon>
-    <h2>VueFX</h2>
-    <!--a>Support <fx-icon name="chevron-down"/></a>
-    <a>Support <fx-icon name="chevron-down"/></a>
-    <fx-icon name="github-circle"/-->
+    <section class="left">
+      <!--img :src="require('../assets/img/logo.png')" height="40px"/-->
+      <fx-icon name="bug-outline" class="medium">Logo</fx-icon>
+      <h2>VueFX</h2>
+    </section>
+    <section class="middle">
+      <ul>
+        <li><fx-icon name="github-circle"/></li>
+        <li><a>Support <fx-icon name="chevron-down"/></a></li>
+        <li><a>Details <fx-icon name="chevron-down"/></a></li>
+      </ul>
+    </section>
      <section class="right">
-      <fx-select
-        :min-width="200"
-        :options="themes"
-        theme="boxed"
-        v-model="selectedTheme"
-        />
+       <div class="wrapper">
+         <fx-icon name="magnify" :size="20"/>
+         Search...
+       </div>
+         <!--fx-select
+             :min-width="200"
+             :options="themes"
+             theme="boxed"
+             v-model="selectedTheme"
+             /-->
     </section>
   </header>
 </template>
@@ -40,39 +50,82 @@ export default {
   border-bottom: 1px solid var(--color--border-2);
   display: flex;
   flex-direction: row;
-  padding-left: 30px;
-  align-items: center;
 
-  .fx-icon[name="bug-outline"] {
-    color: var(--color--secondary);
+  .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 30px;
+
+    .fx-icon[name="bug-outline"] {
+      color: var(--color--secondary);
+    }
+
+    h2 {
+      font-weight: var(--font-weight--medium);
+      color: var(--color--font);
+      margin: 0;
+      padding: 0;
+      margin-left: var(--spacing--small);
+      @mixin font-size 26px;
+    }
+
+    a {
+      margin: 0 20px;
+      color: var(--color--primary);
+    }
+
+    .fx-icon {
+      color: var(--color--font-secondary);
+    }
+
+    .fx-icon + .fx-icon {
+      margin-left: var(--spacing--small);
+    }
   }
 
-  h2 {
-    font-weight: var(--font-weight--medium);
-    color: var(--color--font);
-    margin: 0;
-    padding: 0;
-    margin-left: var(--spacing--small);
-    @mixin font-size 26px;
-  }
+  .middle {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-  a {
-    margin: 0 20px;
-    color: var(--color--primary);
-  }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
 
-  .fx-icon {
-    color: var(--color--font-secondary);
-  }
+      li {
+        margin-right: 50px;
+        cursor: pointer;
+        display: inline-block;
+        color: var(--color--primary);
 
-  .fx-icon + .fx-icon {
-    margin-left: var(--spacing--small);
+        .fx-icon {
+          color: var(--color--font-2);
+        }
+      }
+    }
   }
 
   .right {
     height: 100%;
+    width: var(--width--app-right);
     margin-left: auto;
     @mixin v-align-children;
+
+    .wrapper {
+      border-left: 1px solid var(--color--border-2);
+      height: 70%;
+      color: var(--color--font-6);
+      @mixin v-align-children;
+    }
+
+    .fx-icon {
+      color: var(--color--font-3);
+      margin-left: 16px;
+      margin-right: 10px;
+    }
 
     .fx-select {
       height: 40px;

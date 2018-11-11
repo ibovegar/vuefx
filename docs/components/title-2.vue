@@ -1,6 +1,6 @@
 <template>
   <div class="title-2">
-    <h2>{{ title }}<fx-icon name="link-variant"/></h2>
+    <h2>{{ title }}<span>#</span></h2>
     <p v-if="$slots.default && $slots.default.length"><slot/></p>
   </div>
 </template>
@@ -32,10 +32,15 @@ export default {
     @mixin font-size 16;
    }
 
-  .fx-icon {
+  span {
     margin-left: 8px;
-    color: var(--color--primary);
+    color: var(--color--font-5);
     cursor: pointer;
+    @mixin font-size 24;
+
+    &:hover {
+      color: var(--color--font-2);
+    }
   }
 }
 </style>
