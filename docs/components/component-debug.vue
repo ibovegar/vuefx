@@ -9,7 +9,9 @@
         <slot name="debug"/>
       </div>
     </transition>
-    <slot/>
+    <span class="component-panel">
+      <slot/>
+    </span>
   </div>
 </template>
 
@@ -17,7 +19,7 @@
 export default {
   data () {
     return {
-      open: false
+      open: this.show
     }
   },
 
@@ -48,8 +50,14 @@ export default {
 .component-debug {
   display: flex;
 
+  .component-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .debug-panel {
-    padding-right: 40px;
     transition: margin-left .3s var(--easing--inf-outs);
   }
 }
