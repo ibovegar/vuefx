@@ -5,7 +5,7 @@ export function splitComponent (sfc) {
 
   return {
     template: parsed.template.content || null,
-    script: parsed.script.content || null,
+    script: parsed.script ? parsed.script.content : null,
     style: parsed.styles.length ? parsed.styles[0].content : null
   }
 }
