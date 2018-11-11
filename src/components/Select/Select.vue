@@ -30,7 +30,7 @@
         <fx-chip
           v-for="value in value" :key="value"
           :value="value"
-          background="fill-7"
+          background="fill-6"
           @input="deselectItem(value)"
           close
           >
@@ -134,7 +134,6 @@ export default {
   form {
     position: relative;
     font-weight: var(--font-weight--regular);
-    color: var(--color--font);
     height: inherit;
     width: 100%;
     display: flex;
@@ -163,12 +162,12 @@ export default {
     padding: 5px 0;
     width: calc(100% - 26px);
     cursor: pointer;
-    .ks-chip { height: auto }
+    .fx-chip { height: auto }
   }
 
   .fx-icon {
     margin-left: auto;
-    color: var(--color--font);
+    color: var(--color--font-1);
     transition: transform 0.4s ease;
     cursor: pointer;
   }
