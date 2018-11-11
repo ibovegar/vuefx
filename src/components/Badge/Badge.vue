@@ -1,51 +1,125 @@
 <template>
-  <div class="fx-badge">
+  <span
+    class="fx-badge"
+    :style="colorStyles"
+     >
     <slot/>
-    <span
-      class="badge"
-      :style="{ top: offsetY + 'px', right: offsetX + 'px' }"
-      :class="{ 'expanded': (value > 9) }"
-      v-show="value > 0"
-      >
-      {{ value }}
-    </span>
-  </div>
+    <transition name="scale">
+      <span
+        class="fx-badge__badge"
+        :class="badgeClasses"
+        :style="positionStyles"
+        v-show="showBadge"
+        >
+        {{ value }}
+      </span>
+    </transition>
+  </span>
 </template>
 
 <script>
+import ColorMixin from '@/mixins/colors.js'
+
 export default {
   name: 'fx-badge',
 
+  mixins: [ ColorMixin ],
+
   props: {
-    offsetX: Number,
-    offsetY: Number,
-    autoHide: { type: Boolean, default: true }, // true -> Hide badge if value === 0
-    value: { type: Number, default: 0, required: true }
+    offsetX: { type: Number, default: 0 },
+    offsetY: { type: Number, default: 0 },
+    value: { type: Number, default: 0, required: true },
+    raised: Boolean,
+    outline: Boolean,
+    sticky: Boolean,
+    position: {
+      type: String,
+      default: 'right-top',
+      validator: value => {
+        return [
+          'left-top',
+          'left-bottom',
+          'left-center',
+          'right-top',
+          'right-bottom',
+          'right-center'
+        ].includes(value)
+      }
+    }
+  },
+
+  computed: {
+    showBadge: function () {
+      return this.value > 0 ? true : this.sticky
+    },
+    badgeClasses: function () {
+      return {
+        'is-raised': this.raised
+      }
+    },
+    positionStyles: function () {
+      let position = {}
+      let xAxis = {}
+      let yAxis = {}
+
+      xAxis.direction = this.position.includes('left') ? 'left' : 'right'
+      xAxis.offset = `calc(100% + (${this.offsetX}px)`
+
+      yAxis.direction = this.position.replace(xAxis.direction + '-', '')
+      yAxis.offset = `calc(100% + (${this.offsetY}px)`
+
+      xAxis.direction === 'left'
+        ? position.right = xAxis.offset
+        : position.left = xAxis.offset
+
+      switch (yAxis.direction) {
+        case 'top': {
+          position.bottom = yAxis.offset
+          break
+        }
+        case 'bottom': {
+          position.top = yAxis.offset
+          break
+        }
+        case 'center': {
+          position.top = '50%'
+          position.transform = 'translateY(-50%)'
+          break
+        }
+      }
+
+      return position
+    }
   }
 }
 </script>
 
 <style>
 .fx-badge {
+  --color--font: var(--color--font-i);
+  --color--fill: var(--color--alert);
+  --color--border: var(--color--border);
+
   position: relative;
+  display: inline-block;
+  overflow: visible;
 
-  .badge {
+  &__badge {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    height: var(--fx-badge--height);
-    min-width: var(--fx-badge--height);
-    line-height: var(--fx-badge--height);
-    text-align: center;
-    font-weight: var(--font-weight--bold);
-    border-radius: calc(var(--fx-badge--height) / 2);
-    color: var(--color--font-i);
-    background-color: var(--color--alert);
-    @mixin font-size 10;
-  }
+    padding: 0 6px;
+    border-radius: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 24px;
+    min-height: 24px;
+    color: var(--color--font);
+    background-color: var(--color--fill);
+    border: 1px solid var(--color--border);
 
-  &.expanded {
-    padding: 0 4px;
+    &.is-raised {
+      @mixin elevation 2;
+    }
   }
 }
 </style>
