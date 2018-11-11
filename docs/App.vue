@@ -42,7 +42,7 @@ export default {
 
   .app-center {
     flex: 1;
-    padding: 0 200px;
+    padding: 0 140px;
     padding-top: 60px;
   }
 }
