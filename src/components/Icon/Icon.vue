@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="fx-icon"
+    class="fx-icon small"
     :name="name"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -22,7 +22,7 @@ export default {
     name: String,
     viewBox: { type: Number, default: 24 },
     iconName: { type: String, default: 'box' },
-    size: { type: [Number, String], default: 24 },
+    size: [Number, String],
     iconColor: { type: String, default: 'currentColor' }
   }
 }
@@ -32,6 +32,8 @@ export default {
 .fx-icon {
   vertical-align: middle;
   display: inline-block;
+  width: 24px;
+  height: 24px;
 
   &.right { transform: rotate(0deg) }
   &.primary { color: var(--color--primary) }
