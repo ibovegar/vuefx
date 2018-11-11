@@ -1,5 +1,5 @@
 <template>
-  <div
+  <span
     class="fx-chip"
     :class="{ 'has-outline': outline}"
     :style="[ backgroundColor, fontColor ]"
@@ -11,7 +11,7 @@
       class="tiny"
       @click.native.stop="$emit('input', value)"
       />
-  </div>
+  </span>
 </template>
 
 <script>
