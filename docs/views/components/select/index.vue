@@ -6,6 +6,10 @@
     <component-demo title="Usage" :component="Usage" :code="UsageCode"/>
     <component-api :api="api"/>
     <component-examples>
+      <component-demo title="Customization" :component="Styling" :code="StylingCode">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+        doloremque laudantium, totam rem aperiam.
+      </component-demo>
       <component-demo title="Single select" :component="Multiple" :code="MultipleCode">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
         doloremque laudantium, totam rem aperiam.
@@ -23,6 +27,8 @@ import Usage from './x-usage'
 import UsageRaw from '!raw-loader!./x-usage'
 import Multiple from './x-multiple'
 import MultipleRaw from '!raw-loader!./x-multiple'
+import Styling from './x-styling'
+import StylingRaw from '!raw-loader!./x-styling'
 
 export default {
   data () {
@@ -31,7 +37,9 @@ export default {
       Usage,
       UsageCode: this.$splitComponent(UsageRaw),
       Multiple,
-      MultipleCode: this.$splitComponent(MultipleRaw)
+      MultipleCode: this.$splitComponent(MultipleRaw),
+      Styling,
+      StylingCode: this.$splitComponent(StylingRaw)
     }
   }
 }
