@@ -147,6 +147,7 @@ export default {
 
     &__result {
       padding: var(--spacing--huge);
+      text-align: center;
     }
 
     .fx-tabs {
