@@ -16,6 +16,7 @@
         <div
           v-for="tab in tabs"
           v-if="tab === value"
+          class="slide-item"
           :key="tab"
           >
           <slot :name="tab"/>
@@ -136,7 +137,7 @@ export default {
   .slide {
     position: relative;
 
-    div {
+    .slide-item {
       overflow: hidden;
       width: 100%;
     }
