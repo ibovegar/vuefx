@@ -30,16 +30,19 @@ export default {
 
   methods: {
     beforeEnter: function (el) {
+      el.style.opacity = '1'
       el.style.marginLeft = `-${this.width}%`
     },
     slideIn: function (el) {
       window.requestAnimationFrame(() => {
         window.requestAnimationFrame(() => {
-          el.style.marginLeft = null
+          el.style.marginLeft = '0'
+          el.style.opacity = null
         })
       })
     },
     slideOut: function (el) {
+      el.style.opacity = '0'
       el.style.marginLeft = `-${this.width}%`
     }
   }
@@ -58,7 +61,7 @@ export default {
   }
 
   .debug-panel {
-    transition: margin-left .3s var(--easing--inf-outs);
+    transition: all .3s var(--easing--inf-outs);
   }
 }
 </style>
