@@ -2,6 +2,7 @@
 
 import '@/styles/index.css'
 
+import Colors from './mixins/colors.js'
 import AnimateHeight from './components/AnimateHeight'
 import Badge from './components/Badge'
 import Icon from './components/Icon'
@@ -27,6 +28,8 @@ components.install = (Vue) => {
       Vue.component(components[key].name, components[key])
     }
   })
+
+  Vue.mixin(Colors)
 
   components.isInstalled = true
 }
