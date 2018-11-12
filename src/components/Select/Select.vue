@@ -9,7 +9,7 @@
     :auto-width="autoWidth"
     :show-checkbox="showCheckbox"
     :fixed="fixed"
-    :style="{ height: height + 'px' }"
+    :style="[{ height: height + 'px' }, colorStyles]"
     @input="$emit('input', $event)"
     @show="showPopper = true"
     @hide="showPopper = false"
@@ -18,7 +18,7 @@
     <form slot="trigger" @click="$refs.input.focus()">
       <input
         ref="input"
-        :placeholder="inputLabel"
+        :placeholder="inputPlaceholder"
         :value="inputValue"
         @focus="isFocused = true"
         @blur="isFocused = false"
@@ -109,7 +109,7 @@ export default {
     inputValue: function () {
       return this.showChips ? null : this.getDisplayName(this.value)
     },
-    inputLabel: function () {
+    inputPlaceholder: function () {
       return this.theme === 'material' || this.showChips ? null : this.label
     }
   },
@@ -127,9 +127,16 @@ export default {
 
 <style>
 .fx-select {
+  --style--font: var(--color--font-1);
+  --style--background: transparent;
+  --style--border: var(--color--border-5);
+  --style--color: var(--color--primary);
+
   width: 100%;
   display: block;
   height: var(--fx-select--height);
+  color: var(--style--font);
+  background-color: var(--style--background);
 
   form {
     position: relative;
@@ -147,6 +154,7 @@ export default {
     width: 0;
     height: inherit;
     cursor: pointer;
+    color: var(--style--font);
   }
 
   label {
@@ -155,6 +163,11 @@ export default {
     transform: translateY(-50%);
     transition: all 0.3s var(--easing--inf-outs);
     cursor: pointer;
+  }
+
+  ::placeholder {
+    color: var(--style--font);
+    opacity: 1;
   }
 
   .fx-chip-group {
@@ -167,7 +180,6 @@ export default {
 
   .fx-icon {
     margin-left: auto;
-    color: var(--color--font-1);
     transition: transform 0.4s ease;
     cursor: pointer;
   }
@@ -192,7 +204,7 @@ export default {
     label {
       cursor: default;
       top: -6px;
-      color: var(--color--primary);
+      color: var(--style--color);
       @mixin font-size 12;
     }
   }
@@ -200,7 +212,7 @@ export default {
   &.is-boxed {
     form {
       border-radius: var(--border-radius--small);
-      border: 1px solid var(--color--border-4);
+      border: 1px solid var(--style--border);
       transition: border-color 0.2s ease;
       &:hover { border-color: var(--color--border-6) }
     }
@@ -210,8 +222,8 @@ export default {
 
   &.is-material {
     form {
-      box-shadow: inset 0 -1px 0 0 var(--color--border-5);
-      &:hover { box-shadow: inset 0 -2px 0 0 var(--color--border-6) }
+      box-shadow: inset 0 -1px 0 0 var(--style--border);
+      &:hover { box-shadow: inset 0 -2px 0 0 var(--style--border) }
 
       &:before, &:after {
         content:'';
@@ -220,7 +232,7 @@ export default {
         bottom: 0;
         position: absolute;
         transition: width 0.5s var(--easing--inf-outs);
-        background-color: var(--color--primary);
+        background-color: var(--style--color);
       }
       &:before { left: 50% }
       &:after { right: 50% }

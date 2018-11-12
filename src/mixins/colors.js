@@ -3,33 +3,25 @@ export default {
     colorStyles: function () {
       let styles = {}
 
-      if (this.fill) {
-        styles['--color--fill'] = `var(--color--${this.fill})`
-      }
+      if (this.fxBackground) styles['--style--background'] = `var(--color--${this.fxBackground})`
+      if (this.fxBorder) styles['--style--border'] = `var(--color--${this.fxBorder})`
+      if (this.fxFont) styles['--style--font'] = `var(--color--${this.fxFont})`
+      if (this.fxColor) styles['--style--color'] = `var(--color--${this.fxColor})`
 
-      if (this.border) {
-        styles['--color--border'] = `var(--color--${this.border})`
-      }
-
-      if (this.font) {
-        styles['--color--font'] = `var(--color--${this.font})`
+      if (this.fxStyles) {
+        for (let key of Object.keys(this.fxStyles)) {
+          styles[`--style--${key}`] = `var(--color--${this.fxStyles[key]})`
+        }
       }
 
       return styles
     }
   },
   props: {
-    fill: String,
-    border: String,
-    font: String
+    fxBackground: String,
+    fxBorder: String,
+    fxFont: String,
+    fxColor: String,
+    fxStyles: Object
   }
-
-  // mounted () {
-  //   console.log(this.$el, this, this.$el.style)
-  //   this.$el.style =
-  //   if (style === array) style.push(colorStyles)
-  //   else if (style === string) stylle ?
-  //   else style = colorStyles
-  //
-  // }
 }

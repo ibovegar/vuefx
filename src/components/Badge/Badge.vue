@@ -18,12 +18,8 @@
 </template>
 
 <script>
-import ColorMixin from '@/mixins/colors.js'
-
 export default {
   name: 'fx-badge',
-
-  mixins: [ ColorMixin ],
 
   props: {
     offsetX: { type: Number, default: 0 },
@@ -96,9 +92,9 @@ export default {
 
 <style>
 .fx-badge {
-  --color--font: var(--color--font-i);
-  --color--fill: var(--color--alert);
-  --color--border: var(--color--border);
+  --style--font: var(--color--font-i);
+  --style--color: var(--color--alert);
+  --style--border: var(--color--border);
 
   position: relative;
   display: inline-block;
@@ -113,9 +109,9 @@ export default {
     align-items: center;
     min-width: 24px;
     min-height: 24px;
-    color: var(--color--font);
-    background-color: var(--color--fill);
-    border: 1px solid var(--color--border);
+    color: var(--style--font);
+    background-color: var(--style--color);
+    border: 1px solid var(--style--border);
 
     &.is-raised {
       @mixin elevation 2;
