@@ -1,13 +1,13 @@
 <template>
   <span
     class="fx-chip"
-    :class="{ 'has-outline': outline}"
-    :style="[ backgroundColor, fontColor ]"
+    :class="rootClasses"
+    :style="colorStyles"
     >
     <slot/>
     <fx-icon
       v-if="close"
-      name="close"
+      name="close-circle"
       class="tiny"
       @click.native.stop="$emit('input', value)"
       />
@@ -15,25 +15,24 @@
 </template>
 
 <script>
+import ColorMixin from '@/mixins/colors.js'
+
 export default {
   name: 'fx-chip',
+
+  mixins: [ ColorMixin ],
 
   props: {
     value: String,
     close: Boolean,
-    background: String,
-    font: String,
-    outline: Boolean
+    raised: Boolean
   },
 
   computed: {
-    backgroundColor: function () {
-      return this.outline
-        ? { '--fx-chip--border-color': `var(--color--${this.background})` }
-        : { '--fx-chip--background-color': `var(--color--${this.background})` }
-    },
-    fontColor: function () {
-      return { '--fx-chip--font-color': `var(--color--${this.font})` }
+    rootClasses: function () {
+      return {
+        'is-raised': this.raised
+      }
     }
   }
 }
@@ -41,30 +40,36 @@ export default {
 
 <style>
 .fx-chip {
+  --style--font: var(--color--font-1);
+  --style--background: var(--color--fill-6);
+  --style--border: transparent;
+  --style--color: var(--color--primary);
+
   display: flex;
   flex-direction: row;
   display: inline-flex;
   align-items: center;
   border-radius: 500px;
-  border: 1px solid;
+  border: 1px solid var(--style--border);
   height: var(--fx-chip--height);
   padding: 0 var(--spacing--medium);
-  color: var(--fx-chip--font-color);
-  border-color: var(--fx-chip--border-color);
-  background-color: var(--fx-chip--background-color);
+  color: var(--style--font);
+  background-color: var(--style--background);
 
-  &.has-outline { --fx-chip--background-color: 'transparent' }
+  &.is-raised {
+    @mixin elevation 2;
+  }
 
-  .fx-icon[name="close"] {
+  .fx-icon[name="close-circle"] {
     cursor: pointer;
     margin-left: 8px;
     margin-right: -6px;
-    color: var(--chip--background-color);
+    color: var(--style--font);
     opacity: 0.4;
     border-radius: 100%;
 
     &:hover {
-      background-color: var(--color--secondary);
+      opacity: 1;
     }
   }
 }
