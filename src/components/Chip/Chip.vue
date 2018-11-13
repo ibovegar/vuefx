@@ -41,11 +41,10 @@ export default {
 <style>
 .fx-chip {
   --style--font: var(--color--font-1);
-  --style--background: var(--color--fill-6);
+  --style--background: var(--color--fill-7);
   --style--border: transparent;
   --style--color: var(--color--primary);
 
-  display: flex;
   flex-direction: row;
   display: inline-flex;
   align-items: center;
@@ -55,6 +54,7 @@ export default {
   padding: 0 var(--spacing--medium);
   color: var(--style--font);
   background-color: var(--style--background);
+  white-space: nowrap;
 
   &.is-raised {
     @mixin elevation 2;

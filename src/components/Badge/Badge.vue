@@ -18,8 +18,12 @@
 </template>
 
 <script>
+import ColorMixin from '@/mixins/colors.js'
+
 export default {
   name: 'fx-badge',
+
+  mixins: [ ColorMixin ],
 
   props: {
     offsetX: { type: Number, default: 0 },

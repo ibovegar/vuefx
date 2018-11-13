@@ -29,8 +29,6 @@ components.install = (Vue) => {
     }
   })
 
-  Vue.mixin(Colors)
-
   components.isInstalled = true
 }
 
