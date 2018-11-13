@@ -30,6 +30,6 @@ export default {
 
 <style scoped>
 .fx-chip + .fx-chip {
-  margin-left: var(--spacing--small);
+  margin-left: var(--spacing--medium);
 }
 </style>

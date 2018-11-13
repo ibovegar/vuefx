@@ -66,11 +66,17 @@ export default {
 
 <style scoped>
 section {
-  display: flex;
-  flex-direction: row;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
   .fx-select {
+    margin: 20px 0;
+    float: left;
     margin-right: 20px;
+    width: 145px;
   }
- }
+}
 </style>

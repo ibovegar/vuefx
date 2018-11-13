@@ -1,17 +1,13 @@
 <template>
   <section>
-    <div class="wrapper">
-      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-    </div>
-    <div class="wrapper">
-      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-      <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-    </div>
+    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
   </section>
 </template>
 
@@ -32,16 +28,18 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
-  display: flex;
-  flex-direction: row;
+section {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
   .fx-select {
+    margin: 20px 0;
+    float: left;
     margin-right: 20px;
+    width: 145px;
   }
-}
-
-.wrapper + .wrapper {
-  margin-top: 50px;
 }
 </style>
