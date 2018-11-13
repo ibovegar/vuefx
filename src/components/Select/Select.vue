@@ -46,8 +46,12 @@
 </template>
 
 <script>
+import ColorMixin from '@/mixins/colors.js'
+
 export default {
   name: 'fx-select',
+
+  mixins: [ ColorMixin ],
 
   data () {
     return {
@@ -134,14 +138,14 @@ export default {
 
   width: 100%;
   display: block;
-  height: var(--fx-select--height);
+  min-height: var(--fx-select--height);
   color: var(--style--font);
   background-color: var(--style--background);
 
   form {
     position: relative;
     font-weight: var(--font-weight--regular);
-    height: inherit;
+    min-height: inherit;
     width: 100%;
     display: flex;
     align-items: center;
