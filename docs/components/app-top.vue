@@ -110,8 +110,9 @@ export default {
 
   .right {
     height: 100%;
-    width: var(--width--app-right);
+    min-width: var(--width--app-right);
     margin-left: auto;
+    padding-right: 20px;
     @mixin v-align-children;
 
     .wrapper {

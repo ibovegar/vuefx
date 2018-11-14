@@ -34,6 +34,11 @@ export default {
   position: sticky;
   top: 0;
   padding-top: var(--spacing--large);
+  display: none;
+
+  @media (min-width: 1600px) {
+    display: block;
+  }
 
   .toc {
     color: var(--color--font-2);

@@ -37,13 +37,17 @@ export default {
 
   .content-wrapper {
     display: flex;
-    justify-content: space-between;
   }
 
   .app-center {
     flex: 1;
-    padding: 0 140px;
+    min-width: 0;
+    padding: 0 10px;
     padding-top: 60px;
+
+    @media (min-width: 1600px) {
+      padding: 0 140px;
+    }
   }
 }
 </style>

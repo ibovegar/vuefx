@@ -52,6 +52,11 @@ export default {
   flex-direction: row;
   background-color: var(--color--fill-2);
   border-right: 1px solid var(--color--border-2);
+  display: none;
+
+  @media (min-width: 1600px) {
+    display: block;
+  }
 
   .fx-vmenu {
     //padding-left: var(--spacing--large);
