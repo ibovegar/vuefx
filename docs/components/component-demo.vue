@@ -132,22 +132,23 @@ export default {
       position: absolute;
       top: 8px;
       right: 0;
+      display: flex;
 
       .fx-icon {
         color: var(--color--font-2);
         cursor: pointer;
         width: 10px;
-        border-radius: 100%;
+        border-top: 1px solid transparent;
 
         &:hover {
           color: var(--color--primary);
+          border-color: var(--color--primary);
         }
       }
     }
 
     &__result {
       padding: var(--spacing--huge);
-      text-align: center;
     }
 
     .fx-tabs {
