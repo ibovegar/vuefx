@@ -4,7 +4,7 @@
       Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut.
     </title-1>
     <component-demo title="Usage" :component="Usage" :code="UsageCode"/>
-    <component-api :api="api"/>
+    <!--component-api :api="api"/-->
     <component-examples>
       <component-demo title="Customization" :component="Styling" :code="StylingCode">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium

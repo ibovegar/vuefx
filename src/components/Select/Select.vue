@@ -9,7 +9,7 @@
     :auto-width="autoWidth"
     :show-checkbox="showCheckbox"
     :fixed="fixed"
-    :style="[{ height: height + 'px' }, colorStyles]"
+    :style="[{ minHeight: height + 'px' }, colorStyles]"
     @input="$emit('input', $event)"
     @show="showPopper = true"
     @hide="showPopper = false"
@@ -38,7 +38,7 @@
         </fx-chip>
       </fx-chip-group>
       <fx-icon name="menu-down" :class="{ 'flip-v': showPopper }"/>
-    </form>
+      </form>
     <fx-dropdown-item v-for="option in options" :key="option.value" :value="option.value">
       {{ option.name }}
     </fx-dropdown-item>
@@ -136,17 +136,15 @@ export default {
   --style--border: var(--color--border-5);
   --style--color: var(--color--primary);
 
-  width: 100%;
-  display: block;
   min-height: var(--fx-select--height);
   color: var(--style--font);
   background-color: var(--style--background);
+  width: 100%;
 
   form {
     position: relative;
     font-weight: var(--font-weight--regular);
     min-height: inherit;
-    width: 100%;
     display: flex;
     align-items: center;
   }
@@ -156,7 +154,6 @@ export default {
     background-color: transparent;
     flex: 1 0 auto;
     width: 0;
-    height: inherit;
     cursor: pointer;
     color: var(--style--font);
   }
@@ -175,11 +172,8 @@ export default {
   }
 
   .fx-chip-group {
-    height: 100%;
-    padding: 5px 0;
     width: calc(100% - 26px);
     cursor: pointer;
-    .fx-chip { height: auto }
   }
 
   .fx-icon {

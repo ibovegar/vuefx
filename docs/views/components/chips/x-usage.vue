@@ -28,7 +28,6 @@ export default {
 }
 </script>
 
-
 <style scoped>
 .fx-chip + .fx-chip {
   margin-left: var(--spacing--medium);

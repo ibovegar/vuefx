@@ -1,8 +1,9 @@
 <template>
-  <span
+  <div
     class="fx-dropdown"
     v-click-outside="doClose"
     >
+    <slot name="trigger"/>
     <transition
       :name="transition"
       @after-leave="doDestroy"
@@ -22,8 +23,7 @@
         <div v-else class="placeholder">Empty</div>
       </span>
     </transition>
-    <slot name="trigger"/>
-  </span>
+  </div>
 </template>
 
 <script>
