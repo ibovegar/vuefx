@@ -50,8 +50,8 @@ export default {
   align-items: center;
   border-radius: 500px;
   border: 1px solid var(--style--border);
-  height: var(--fx-chip--height);
-  padding: 0 var(--spacing--medium);
+  min-height: var(--fx-chip--height);
+  padding: 3px var(--spacing--medium);
   color: var(--style--font);
   background-color: var(--style--background);
   white-space: nowrap;

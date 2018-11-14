@@ -69,11 +69,10 @@ export default {
 
   border: 1px solid var(--style--border);
   background-color: var(--style--background);
-  padding: calc(var(--fx-chip-group--spacing) * 2);
-  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   //max-width: 500px;
+  //overflow: hidden;
 
   &.is-scrollable {
 
@@ -94,7 +93,7 @@ export default {
   }
 
   .fx-chip {
-    //margin: var(--fx-chip-group--spacing);
+    margin: var(--fx-chip-group--spacing);
   }
 
   &.has-overflow {
