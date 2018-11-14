@@ -1,5 +1,5 @@
 <template>
-  <span
+  <div
     class="fx-chip"
     :class="rootClasses"
     :style="colorStyles"
@@ -11,7 +11,7 @@
       class="tiny"
       @click.native.stop="$emit('input', value)"
       />
-  </span>
+  </div>
 </template>
 
 <script>
@@ -54,7 +54,6 @@ export default {
   padding: 3px var(--spacing--medium);
   color: var(--style--font);
   background-color: var(--style--background);
-  white-space: nowrap;
 
   &.is-raised {
     @mixin elevation 2;

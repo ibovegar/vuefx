@@ -3,7 +3,7 @@
     class="fx-chip-group"
     :class="rootClasses"
     :style="colorStyles"
-    v-drag-scroll
+    v-drag-scroll="scrollable"
     >
     <slot/>
   </div>
@@ -54,6 +54,7 @@ export default {
 
   mounted () {
     this.checkOverflow()
+
   }
 }
 </script>
@@ -69,18 +70,20 @@ export default {
 
   border: 1px solid var(--style--border);
   background-color: var(--style--background);
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  //max-width: 500px;
-  //overflow: hidden;
 
   &.is-scrollable {
-
+    flex-wrap: initial;
   }
 
   &.is-left {
     justify-content: left;
-    .fx-chip { margin-left: 0px }
+
+    .fx-chip {
+      margin-left: 0px;
+    }
   }
 
   &.is-center {
@@ -89,11 +92,15 @@ export default {
 
   &.is-right {
     justify-content: right;
-    .fx-chip { margin-right: 0px }
+
+    .fx-chip {
+      margin-right: 0px;
+    }
   }
 
   .fx-chip {
     margin: var(--fx-chip-group--spacing);
+    flex-shrink: 0;
   }
 
   &.has-overflow {
