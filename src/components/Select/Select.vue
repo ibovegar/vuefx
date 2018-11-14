@@ -26,7 +26,7 @@
         />
       <label v-if="showLabel">{{ label }}</label>
       <span class="focus-border"><i></i></span>
-      <fx-chip-group v-if="showChips">
+      <fx-chip-group v-if="showChips" :scrollable="scrollChips">
         <fx-chip
           v-for="value in value" :key="value"
           :value="value"
@@ -71,6 +71,7 @@ export default {
     height: Number,
     autoWidth: Boolean,
     showCheckbox: Boolean,
+    scrollChips: Boolean,
     value: [String, Array],
     appendToBody: Boolean,
     boundariesElement: String,

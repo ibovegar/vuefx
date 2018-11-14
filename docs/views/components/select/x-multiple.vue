@@ -1,6 +1,5 @@
 <template>
   <section>
-    <component-debug :width="50">
       <fx-select
         label="Selected fruits"
         transition="slide-down"
@@ -11,12 +10,45 @@
         fixed
         focus-checkmark
         />
+      <fx-select
+        label="Selected fruits"
+        transition="slide-down"
+        :options="types"
+        :height="42"
+        v-model="selectedTypes"
+        multiple
+        fixed
+        focus-checkmark
+        scroll-chips
+        />
+    <!--component-debug :width="30">
+      <fx-select
+        label="Selected fruits"
+        transition="slide-down"
+        :options="types"
+        :height="42"
+        v-model="selectedTypes"
+        multiple
+        fixed
+        focus-checkmark
+        />
+      <fx-select
+        label="Selected fruits"
+        transition="slide-down"
+        :options="types"
+        :height="42"
+        v-model="selectedTypes"
+        multiple
+        fixed
+        focus-checkmark
+        scroll-chips
+        />
       <div slot="debug">
         <button @click="rename">Change name</button>
         <button @click="remove">Remove item</button>
         <button @click="add">Add item</button>
       </div>
-    </component-debug>
+    </component-debug-->
   </section>
 </template>
 
@@ -49,6 +81,18 @@ export default {
 </script>
 
 <style scoped>
+section {
+  text-align: center;
+}
+  
+.fx-select {
+  display: inline-block;
+  width: 250px;
+}
+
+.fx-select + .fx-select {
+  margin-left: 50px;
+}
 
 button {
   background: white;
