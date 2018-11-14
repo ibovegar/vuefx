@@ -171,7 +171,9 @@ let emitEvent = function (vnode, eventName, eventDetail) {
 
 export default {
   bind: function (el, binding, vnode) {
-    init(el, binding, vnode)
+    if (!binding.hasOwnProperty('value') || binding.value === true) {
+      init(el, binding, vnode)
+    }
   },
   update: function (el, binding, vnode, oldVnode) {
     if (binding.value !== binding.oldValue) {
