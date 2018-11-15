@@ -2,22 +2,23 @@
   <section>
     <div class="wrapper">
       <fx-chip-group align="center">
-        <fx-chip v-for="fruit in fruits" :fx-styles="outline">{{ fruit }}</fx-chip>
+        <fx-chip
+          v-for="fruit in fruits" :key="fruit" :fx-styles="outline">{{ fruit }}</fx-chip>
       </fx-chip-group>
     </div>
     <div class="wrapper">
       <fx-chip-group>
-        <fx-chip v-for="fruit in fruits" :fx-styles="outline">{{ fruit }}</fx-chip>
+        <fx-chip v-for="fruit in fruits" :key="fruit" :fx-styles="outline">{{ fruit }}</fx-chip>
       </fx-chip-group>
     </div>
     <div class="wrapper">
       <fx-chip-group align="right">
-        <fx-chip v-for="fruit in fruits" :fx-styles="outline">{{ fruit }}</fx-chip>
+        <fx-chip v-for="fruit in fruits" :key="fruit" :fx-styles="outline">{{ fruit }}</fx-chip>
       </fx-chip-group>
     </div>
     <div class="wrapper">
       <fx-chip-group draggable>
-        <fx-chip v-for="fruit in fruits" :fx-styles="outline">{{ fruit }}</fx-chip>
+        <fx-chip v-for="fruit in fruits" :key="fruit" :fx-styles="outline">{{ fruit }}</fx-chip>
       </fx-chip-group>
     </div>
   </section>

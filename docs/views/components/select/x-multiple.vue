@@ -59,7 +59,7 @@ export default {
 section {
   text-align: center;
 }
-  
+
 .fx-select {
   display: inline-block;
   width: 250px;
@@ -80,6 +80,7 @@ button {
   text-transform: uppercase;
   @mixin elevation 1;
 }
+
 button + button {
   margin-top: 16px;
 }

@@ -100,4 +100,3 @@ module.exports = (mixin, z) => {
                    ${ambient[z]} ${ambientColor}`
   }
 }
-
