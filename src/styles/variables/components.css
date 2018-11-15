@@ -1,9 +1,4 @@
 :root {
-  --fx-chip--height: 34px;
-  --fx-chip--background-color: var(--color--primary);
-  --fx-chip--border-color: transparent;
-  --fx-chip--font-color: var(--color--font);
-
   --fx-tabs--background-color: transparent;
   --fx-tabs--stroke-color: var(--color--primary);
 

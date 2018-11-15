@@ -1,11 +1,15 @@
 <template>
   <div
     class="fx-chip-group"
-    :class="rootClasses"
-    :style="colorStyles"
-    v-drag-scroll="scrollable"
+    :style="[colorStyles, rootStyles]"
+    v-drag-scroll.x="draggable"
     >
-    <slot/>
+    <div
+      class="fx-chip-group__wrapper"
+      :class="rootClasses"
+      >
+      <slot/>
+    </div>
   </div>
 </template>
 
@@ -21,23 +25,12 @@ export default {
   directives: { DragScroll },
 
   props: {
-    scrollable: Boolean,
+    gutter: Number,
+    draggable: Boolean,
     align: {
       type: String,
       default: 'left',
       validator: value => { return ['left', 'right', 'center'].includes(value) }
-    }
-  },
-
-  updated () {
-    this.checkOverflow()
-  },
-
-  methods: {
-    checkOverflow: function () {
-      this.$el.clientWidth < this.$el.scrollWidth
-        ? this.$el.classList.add('has-overflow')
-        : this.$el.classList.remove('has-overflow')
     }
   },
 
@@ -47,14 +40,14 @@ export default {
         'is-left': this.align === 'left',
         'is-right': this.align === 'right',
         'is-center': this.align === 'center',
-        'is-scrollable': this.scrollable
+        'is-draggable': this.draggable
+      }
+    },
+    rootStyles: function () {
+      return {
+        '--gutter': this.gutter + 'px'
       }
     }
-  },
-
-  mounted () {
-    this.checkOverflow()
-
   }
 }
 </script>
@@ -65,46 +58,30 @@ export default {
   --style--background: transparent;
   --style--border: transparent;
   --style--color: var(--color--primary);
-
-  --fx-chip-group--spacing: 5px;
+  --gutter: 5px;
 
   border: 1px solid var(--style--border);
   background-color: var(--style--background);
   overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
 
-  &.is-scrollable {
-    flex-wrap: initial;
-  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(0px - var(--gutter));
 
-  &.is-left {
-    justify-content: left;
+    &.is-draggable {
+      flex-wrap: initial;
+      cursor: grab;
+    }
+
+    &.is-left { justify-content: left }
+    &.is-center { justify-content: center }
+    &.is-right { justify-content: right }
 
     .fx-chip {
-      margin-left: 0px;
+      margin: var(--gutter);
+      flex-shrink: 0;
     }
-  }
-
-  &.is-center {
-    justify-content: center;
-  }
-
-  &.is-right {
-    justify-content: right;
-
-    .fx-chip {
-      margin-right: 0px;
-    }
-  }
-
-  .fx-chip {
-    margin: var(--fx-chip-group--spacing);
-    flex-shrink: 0;
-  }
-
-  &.has-overflow {
-    cursor: grab;
   }
 }
 </style>
