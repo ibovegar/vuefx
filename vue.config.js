@@ -11,6 +11,13 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'docs')
   },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'docs': path.resolve(__dirname, 'docs/')
+      }
+    }
+  },
   chainWebpack: config => {
     config.module
       .rule('fonts')

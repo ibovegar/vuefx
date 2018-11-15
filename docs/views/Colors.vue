@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import ColorPlayground from '../components/color-playground'
-import ColorPalette from '../components/color-palette'
+import ColorPlayground from 'docs/components/color-playground'
+import ColorPalette from 'docs/components/color-palette'
 
 export default {
   name: 'colors',
