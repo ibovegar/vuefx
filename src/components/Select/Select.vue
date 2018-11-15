@@ -10,29 +10,29 @@
     :show-checkbox="showCheckbox"
     :fixed="fixed"
     :style="[{ minHeight: height + 'px' }, colorStyles]"
+    overlay
     @input="$emit('input', $event)"
     @show="showPopper = true"
     @hide="showPopper = false"
-    overlay
     >
     <form slot="trigger" @click="$refs.input.focus()">
       <input
         ref="input"
         :placeholder="inputPlaceholder"
         :value="inputValue"
+        readonly
         @focus="isFocused = true"
         @blur="isFocused = false"
-        readonly
         />
       <label v-if="showLabel">{{ label }}</label>
       <span class="focus-border"><i></i></span>
-      <fx-chip-group v-if="showChips" :scrollable="scrollChips">
+      <fx-chip-group v-if="showChips" :draggable="dragChips" :gutter="2">
         <fx-chip
           v-for="value in value" :key="value"
           :value="value"
           background="fill-6"
-          @input="deselectItem(value)"
           close
+          @input="deselectItem(value)"
           >
           {{ getDisplayName(value) }}
         </fx-chip>
@@ -71,7 +71,7 @@ export default {
     height: Number,
     autoWidth: Boolean,
     showCheckbox: Boolean,
-    scrollChips: Boolean,
+    dragChips: Boolean,
     value: [String, Array],
     appendToBody: Boolean,
     boundariesElement: String,
@@ -174,7 +174,7 @@ export default {
 
   .fx-chip-group {
     width: calc(100% - 26px);
-    cursor: pointer;
+    margin: 4px 0;
   }
 
   .fx-icon {
