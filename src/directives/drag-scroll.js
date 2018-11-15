@@ -1,6 +1,7 @@
 /* MIT License
 
 Copyright (c) 2017 donmbelembe
+https://github.com/donmbelembe/vue-dragscroll
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -171,9 +172,7 @@ let emitEvent = function (vnode, eventName, eventDetail) {
 
 export default {
   bind: function (el, binding, vnode) {
-    if (!binding.hasOwnProperty('value') || binding.value === true) {
-      init(el, binding, vnode)
-    }
+    init(el, binding, vnode)
   },
   update: function (el, binding, vnode, oldVnode) {
     if (binding.value !== binding.oldValue) {
