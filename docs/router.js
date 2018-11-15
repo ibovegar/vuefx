@@ -22,12 +22,12 @@ export default new Router({
     route('icons', 'Icons'),
     route('customization', 'customization/index'),
     /* UI Components */
-    route('vmenu', 'components/v-menu/Vmenu'),
-    route('popover', 'components/popover/Popover'),
-    route('dropdown', 'components/dropdown/Dropdown'),
+    route('vmenu', 'components/v-menu/index'),
+    route('popover', 'components/popover/index'),
+    route('dropdown', 'components/dropdown/index'),
     route('badge', 'components/badge/index'),
     route('chips', 'components/chips/index'),
     route('select', 'components/select/index'),
-    route('tabs', 'components/tabs/Tabs')
+    route('tabs', 'components/tabs/index')
   ]
 })

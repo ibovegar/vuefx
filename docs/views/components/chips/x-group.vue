@@ -16,7 +16,7 @@
       </fx-chip-group>
     </div>
     <div class="wrapper">
-      <fx-chip-group scrollable>
+      <fx-chip-group draggable>
         <fx-chip v-for="fruit in fruits" :fx-styles="outline">{{ fruit }}</fx-chip>
       </fx-chip-group>
     </div>

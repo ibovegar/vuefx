@@ -1,12 +1,11 @@
 <template>
   <section>
-    <fx-chip :fx-styles="primary" close>Apple</fx-chip>
-    <fx-chip :fx-styles="primary" raised>Apple</fx-chip>
-    <fx-chip fx-background="alert" fx-font="font-i" close>Banana</fx-chip>
-    <fx-chip fx-background="alert" fx-font="font-i" raised>Orange</fx-chip>
-    <fx-chip :fx-styles="outline">Kiwi</fx-chip>
+    <fx-chip :fx-styles="primary" close raised>Apple</fx-chip>
+    <fx-chip fx-background="alert" fx-font="font-i" close raised>Banana</fx-chip>
     <fx-chip :fx-styles="outline" close>Kiwi</fx-chip>
     <fx-chip fx-background="fill-1" fx-font="font-2" raised close>Strawberry</fx-chip>
+    <fx-chip :height="10" fx-font="font-2">I am really slim</fx-chip>
+    <fx-chip :height="60" fx-font="font-2" raised>I am really tall</fx-chip>
   </section>
 </template>
 

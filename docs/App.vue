@@ -43,10 +43,10 @@ export default {
     flex: 1;
     min-width: 0;
     padding: 0 10px;
-    padding-top: 60px;
 
     @media (min-width: 1600px) {
       padding: 0 140px;
+      padding-top: 80px;
     }
   }
 }

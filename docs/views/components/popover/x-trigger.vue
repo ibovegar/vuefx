@@ -5,14 +5,9 @@
       <p close-popover>Click here to close</p>
     </fx-popover>
     <fx-popover>
-      <fx-button
-        custom-color="primary"
-        size="medium"
-        :fluid="true"
-        slot="trigger"
-        >
+      <button slot="trigger">
         SHOW POPOVER
-        </fx-button>
+      </button>
       <p close-popover>Click here to close</p>
     </fx-popover>
   </section>

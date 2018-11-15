@@ -1,29 +1,28 @@
 <template>
   <section>
-    <fx-button @button-clicked="selectedItems = ['print']">
+    <button @click="selectedItem = 'print'">
       Select print
-    </fx-button>
+    </button>
     <fx-dropdown
-      v-model="selectedItems"
-      multiple
-      focus-color
+      v-model="selectedItem"
+      inherit-width
       focus-check
+      close-on-click
+      fixed
       >
-      <fx-button slot="trigger">Main menu</fx-button>
-      <fx-dropdown-item value="save" close-popover>Save</fx-dropdown-item>
+      <button slot="trigger">Preferences</button>
+      <fx-dropdown-item value="save">
+        <fx-icon name="account-circle"/>
+      </fx-dropdown-item>
       <fx-dropdown-item separator/>
       <fx-dropdown-item disabled value="save_all">Save all</fx-dropdown-item>
       <fx-dropdown-item value="preferences">Preferences</fx-dropdown-item>
       <fx-dropdown-item value="print">Print</fx-dropdown-item>
       <fx-dropdown-item separator/>
       <fx-dropdown-item value="print_preview">Print preview</fx-dropdown-item>
-      <fx-dropdown-item value="help">
-        <fx-icon name="account-circle"/>User account
-      </fx-dropdown-item>
+      <fx-dropdown-item value="help">Help</fx-dropdown-item>
     </fx-dropdown>
-    <p>
-      Selected items: {{ selectedItems }}
-    </p>
+    Clicked item: {{ selectedItem }}
   </section>
 </template>
 
@@ -31,7 +30,7 @@
 export default {
   data () {
     return {
-      selectedItems: []
+      selectedItem: ''
     }
   }
 }
@@ -39,7 +38,6 @@ export default {
 
 <style scoped>
 .ks-icon {
-  color: var(--color--border-darken);
-  margin-right: 5px;
+  margin-right: var(--spacing--small);
 }
 </style>
