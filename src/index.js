@@ -1,31 +1,25 @@
 /* eslint object-property-newline: 0 */
-
 import '@/styles/index.css'
-
 import AnimateHeight from './components/AnimateHeight'
 import Badge from './components/Badge'
 import Icon from './components/Icon'
 import Popover from './components/Popover'
 import Tabs from './components/Tabs'
 import Select from './components/Select'
-import { Chip, ChipGroup } from './components/Chip'
-import { Dropdown, DropdownItem } from './components/Dropdown'
-import { Vmenu, VmenuCategory, VmenuTopic } from './components/Vmenu'
+import Chips from './components/Chips'
+import Dropdown from './components/Dropdown'
+import Vmenu from './components/Vmenu'
 
 const components = {
-  AnimateHeight, Badge, Chip, ChipGroup, Dropdown, DropdownItem,
-  Icon, Popover, Select, Tabs, Vmenu, VmenuCategory,
-  VmenuTopic
+  AnimateHeight, Badge, Chips, Dropdown, Icon, Popover, Select, Tabs, Vmenu
 }
 
 /* Declare install function executed by Vue.use() */
-components.install = (Vue) => {
+function install (Vue) {
   if (components.isInstalled) return
 
   Object.keys(components).forEach((key) => {
-    if (key && key !== 'install') {
-      Vue.component(components[key].name, components[key])
-    }
+    Vue.use(components[key])
   })
 
   components.isInstalled = true
@@ -37,4 +31,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* To allow use as module (npm/webpack/etc.) export component */
-export default components
+export default {
+  install,
+  ...components
+}

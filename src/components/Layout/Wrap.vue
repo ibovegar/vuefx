@@ -2,12 +2,15 @@
   <div
     class="fx-chip"
     :class="rootClasses"
-    :style="[colorStyles, rootStyles]"
+    :style="[colorStyles, rootStyles, custom.root]"
     >
-    <slot/>
+    <span :style="custom.label">
+      <slot/>
+    </span>
     <fx-icon
       v-if="close"
       name="close"
+      :style="custom.icon"
       @click.native.stop="$emit('input', value)"
       />
   </div>
@@ -26,6 +29,16 @@ export default {
     close: Boolean,
     raised: Boolean,
     height: Number
+  },
+
+  data: {
+    custom: {
+      root: {},
+      avatar: {},
+      icon: {},
+      deleteIcon: {},
+      label: {}
+    }
   },
 
   computed: {
