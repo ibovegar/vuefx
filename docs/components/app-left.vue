@@ -13,7 +13,7 @@
         <fx-vmenu-topic value="/button" label="Button"/>
       </fx-vmenu-category>
       <fx-vmenu-category value="/typograpy" label="Typograpy"/>
-      <fx-vmenu-category value="/typograpy" label="Application layout"/>
+      <fx-vmenu-category value="/layout" label="Layout"/>
       <fx-vmenu-category value="/icons" label="Icons"/>
       <fx-vmenu-category label="Components">
         <fx-vmenu-topic value="/badge" label="Badge"/>

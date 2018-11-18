@@ -21,6 +21,7 @@ export default new Router({
     route('colors', 'Colors'),
     route('icons', 'Icons'),
     route('customization', 'customization/index'),
+    route('layout', 'layout/index'),
     /* UI Components */
     route('vmenu', 'components/v-menu/index'),
     route('popover', 'components/popover/index'),
