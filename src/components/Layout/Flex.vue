@@ -1,87 +1,113 @@
 <template>
   <div
-    class="fx-chip-group"
-    :style="[colorStyles, rootStyles]"
-    v-drag-scroll.x="draggable"
+    class="flex-container"
+    :style="[gutterStyles, colorStyles, rootStyles]"
     >
-    <div
-      class="fx-chip-group__wrapper"
-      :class="rootClasses"
-      >
-      <slot/>
-    </div>
+    <slot></slot>
   </div>
 </template>
 
 <script>
-import DragScroll from '@/directives/drag-scroll'
 import ColorMixin from '@/mixins/colors.js'
 
 export default {
-  name: 'fx-chip-group',
+  name: 'fx-flex',
 
   mixins: [ ColorMixin ],
 
-  directives: { DragScroll },
-
   props: {
-    gutter: Number,
-    draggable: Boolean,
-    align: {
-      type: String,
-      default: 'left',
-      validator: value => { return ['left', 'right', 'center'].includes(value) }
-    }
-  },
-
-  computed: {
-    rootClasses: function () {
-      return {
-        'is-left': this.align === 'left',
-        'is-right': this.align === 'right',
-        'is-center': this.align === 'center',
-        'is-draggable': this.draggable
+    wrap: {
+      default: 'wrap',
+      validator: function (value) {
+        return [
+          'nowrap',
+          'wrap',
+          'wrap-reverse'
+        ].includes(value)
       }
     },
+    justifyContent: {
+      default: 'center',
+      validator: function (value) {
+        return [
+          'flex-end',
+          'flex-start',
+          'center',
+          'space-between',
+          'space-around'
+        ].includes(value)
+      }
+    },
+    alignItems: {
+      default: 'stretch',
+      validator: function (value) {
+        return [
+          'flex-start',
+          'flex-end',
+          'center',
+          'baseline',
+          'stretch'
+        ].includes(value)
+      }
+    },
+    direction: {
+      default: 'row',
+      validator: function (value) {
+        return [
+          'row',
+          'row-reverse',
+          'column',
+          'column-reverse'
+        ].includes(value)
+      }
+    },
+    alignContent: {
+      default: 'flex-start',
+      validator: function (value) {
+        return [
+          'flex-end',
+          'flex-start',
+          'center',
+          'space-between',
+          'space-around',
+          'stretch'
+        ].includes(value)
+      }
+    },
+    flex: { type: String, default: '1 1 auto' },
+    width: { type: Number, default: null },
+    height: { type: Number, default: null },
+    gutter: { Number, default: 0 },
+    inline: Boolean
+  },
+  computed: {
     rootStyles: function () {
       return {
-        '--gutter': this.gutter + 'px'
+        flexDirection: this.direction,
+        flexWrap: this.wrap,
+        justifyContent: this.justifyContent,
+        alignItems: this.alignItems,
+        width: this.width + 'px',
+        height: this.height + 'px',
+        display: this.inline ? 'inline-flex' : 'flex',
+        flex: this.flex
       }
+    },
+    gutterStyles: function () {
+      return { padding: this.gutter / 2 + 'px' }
     }
   }
 }
 </script>
 
 <style>
-.fx-chip-group {
+.flex-container{
   --style--font: var(--color--font-1);
-  --style--background: transparent;
   --style--border: transparent;
-  --style--color: var(--color--primary);
-  --gutter: 5px;
+  --style--bakground: transparent;
 
-  border: 1px solid var(--style--border);
+  color: var(--style--font);
   background-color: var(--style--background);
-  overflow: hidden;
-
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin: calc(0px - var(--gutter));
-
-    &.is-draggable {
-      flex-wrap: initial;
-      cursor: grab;
-    }
-
-    &.is-left { justify-content: left }
-    &.is-center { justify-content: center }
-    &.is-right { justify-content: right }
-
-    .fx-chip {
-      margin: var(--gutter);
-      flex-shrink: 0;
-    }
-  }
+  border: 1px solid var(--style--border);
 }
 </style>

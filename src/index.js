@@ -9,9 +9,11 @@ import Select from './components/Select'
 import Chips from './components/Chips'
 import Dropdown from './components/Dropdown'
 import Vmenu from './components/Vmenu'
+import Layout from './components/Layout'
 
 const components = {
-  AnimateHeight, Badge, Chips, Dropdown, Icon, Popover, Select, Tabs, Vmenu
+  AnimateHeight, Badge, Chips, Dropdown, Icon, Popover, Select, Tabs, Vmenu,
+  Layout
 }
 
 /* Declare install function executed by Vue.use() */

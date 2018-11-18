@@ -1,15 +1,10 @@
-import Chip from './Chip'
-import ChipGroup from './ChipGroup'
+import Flex from './Flex'
+import FlexItem from './FlexItem'
 
-Chip.install = function (Vue) {
-  Vue.component(Chip.name, Chip)
-}
-
-ChipGroup.install = function (Vue) {
-  Vue.component(ChipGroup.name, ChipGroup)
-}
-
-export {
-  Chip,
-  ChipGroup
+export { Flex, FlexItem }
+export default {
+  install (Vue) {
+    Vue.component(Flex.name, Flex)
+    Vue.component(FlexItem.name, FlexItem)
+  }
 }
