@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex-container"
+    class="ks-flex"
     :style="[gutterStyles, colorStyles, rootStyles]"
     >
     <slot></slot>
@@ -17,7 +17,7 @@ export default {
 
   props: {
     wrap: {
-      default: 'wrap',
+      default: 'nowrap',
       validator: function (value) {
         return [
           'nowrap',
@@ -27,7 +27,7 @@ export default {
       }
     },
     justifyContent: {
-      default: 'center',
+      default: 'flex-start',
       validator: function (value) {
         return [
           'flex-end',
@@ -62,7 +62,7 @@ export default {
       }
     },
     alignContent: {
-      default: 'flex-start',
+      default: 'stretch',
       validator: function (value) {
         return [
           'flex-end',
@@ -75,7 +75,7 @@ export default {
       }
     },
     flex: { type: String, default: '1 1 auto' },
-    width: { type: Number, default: null },
+    width: { type: [Number, String], default: null },
     height: { type: Number, default: null },
     gutter: { Number, default: 0 },
     inline: Boolean
@@ -87,7 +87,7 @@ export default {
         flexWrap: this.wrap,
         justifyContent: this.justifyContent,
         alignItems: this.alignItems,
-        width: this.width + 'px',
+        width: Number.isInteger(this.width) ? this.width + 'px' : this.width,
         height: this.height + 'px',
         display: this.inline ? 'inline-flex' : 'flex',
         flex: this.flex
@@ -101,7 +101,7 @@ export default {
 </script>
 
 <style>
-.flex-container{
+.ks-flex {
   --style--font: var(--color--font-1);
   --style--border: transparent;
   --style--bakground: transparent;
