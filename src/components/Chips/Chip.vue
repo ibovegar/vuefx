@@ -1,19 +1,18 @@
 <template>
-  <fx-flex-item
+  <div
     class="fx-chip"
     :class="rootClasses"
     :style="[colorStyles, rootStyles]"
-    inline
-    >
-    <fx-flex align-items="center">
+    ><!--custom.root>
+    <span> :style="custom.label"-->
       <slot/>
-      <fx-icon
-        v-if="close"
-        name="close"
-        @click.native.stop="$emit('input', value)"
-        />
-    </fx-flex>
-  </fx-flex-item>
+    <!--/span-->
+    <fx-icon
+      v-if="close"
+      name="close"
+      @click.native.stop="$emit('input', value)"
+      /><!--:style="custom.icon"-->
+  </div>
 </template>
 
 <script>
@@ -31,6 +30,19 @@ export default {
     height: Number
   },
 
+  data () {
+    return {
+      gutter: 0
+      // custom: {
+      //   root: {},
+      //   avatar: {},
+      //   icon: {},
+      //   deleteIcon: {},
+      //   label: {}
+      // }
+    }
+  },
+
   computed: {
     rootClasses: function () {
       return {
@@ -39,8 +51,15 @@ export default {
     },
     rootStyles: function () {
       return {
-        minHeight: this.height + 'px'
+        minHeight: this.height + 'px',
+        margin: this.gutter / 2 + 'px'
       }
+    }
+  },
+
+  created () {
+    if (this.$parent.$options._componentTag === 'fx-chip-group') {
+      this.gutter = this.$parent._data.$_gutter
     }
   }
 }
@@ -54,13 +73,16 @@ export default {
   --style--color: var(--color--primary);
   --height: 34px;
 
+  flex-direction: row;
+  display: inline-flex;
+  align-items: center;
   border-radius: 500px;
   border: 1px solid var(--style--border);
   min-height: var(--height);
   padding: 0 var(--spacing--medium);
   color: var(--style--font);
   background-color: var(--style--background);
-  white-space: nowrap;
+  flex-shrink: 0;
 
   &.is-raised {
     @mixin elevation 2;

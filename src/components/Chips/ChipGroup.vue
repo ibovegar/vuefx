@@ -1,16 +1,11 @@
 <template>
   <div
     class="fx-chip-group"
-    :style="[colorStyles]"
+    :class="rootClasses"
+    :style="[colorStyles, rootStyles]"
     v-drag-scroll.x="draggable"
     >
-    <fx-flex
-      :justify-content="align"
-      :wrap="draggable ? 'nowrap' : 'wrap'"
-      :gutter="gutter"
-      >
-      <slot/>
-    </fx-flex>
+    <slot/>
   </div>
 </template>
 
@@ -26,9 +21,35 @@ export default {
   directives: { DragScroll },
 
   props: {
-    gutter: Number,
+    gutter: { type: Number, default: 5 },
     draggable: Boolean,
-    align: String
+    align: {
+      type: String,
+      default: 'left',
+      validator: value => { return ['left', 'right', 'center'].includes(value) }
+    }
+  },
+
+  data () {
+    return {
+      $_gutter: this.gutter
+    }
+  },
+
+  computed: {
+    rootClasses: function () {
+      return {
+        'is-left': this.align === 'left',
+        'is-right': this.align === 'right',
+        'is-center': this.align === 'center',
+        'is-draggable': this.draggable
+      }
+    },
+    rootStyles: function () {
+      return {
+        margin: (this.gutter * -1) / 2 + 'px'
+      }
+    }
   }
 }
 </script>
@@ -39,10 +60,21 @@ export default {
   --style--background: transparent;
   --style--border: transparent;
   --style--color: var(--color--primary);
-  --gutter: 5px;
 
   border: 1px solid var(--style--border);
   background-color: var(--style--background);
   overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &.is-draggable {
+    flex-wrap: nowrap;
+    cursor: grab;
+  }
+
+  &.is-left { justify-content: left }
+  &.is-center { justify-content: center }
+  &.is-right { justify-content: right }
 }
 </style>
