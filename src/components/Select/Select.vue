@@ -26,7 +26,7 @@
         />
       <label v-if="showLabel">{{ label }}</label>
       <span class="focus-border"><i></i></span>
-      <fx-chip-group v-if="showChips" :draggable="dragChips" :gutter="2">
+      <fx-chip-group v-if="showChips" :draggable="dragChips" :gutter="4">
         <fx-chip
           v-for="value in value" :key="value"
           :value="value"
@@ -174,7 +174,7 @@ export default {
 
   .fx-chip-group {
     width: calc(100% - 26px);
-    margin: 4px 0;
+    padding: 4px 0;
   }
 
   .fx-icon {
