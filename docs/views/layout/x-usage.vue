@@ -1,35 +1,38 @@
 <template>
   <fx-flex direction="column" :gutter="40">
     <fx-flex-item fx-background="fill-6">
-      <fx-flex :gutter="10" justify-content="flex-start">
-        <fx-flex-item
-          v-for="index in 8"
-          :key="index"
-          fx-background="info"
-          :height="50"
-          :width="50"
-          />
-      </fx-flex>
       <fx-flex :gutter="10">
         <fx-flex-item
-          v-for="index in 8"
-          :key="index"
           fx-background="info"
-          :height="50" :width="50"
+          :height="40"
+          :width="200"
+          />
+      </fx-flex>
+      <fx-flex :gutter="10"  justify-content="center">
+        <fx-flex-item
+          fx-background="info"
+          :height="40"
+          :width="200"
           />
       </fx-flex>
       <fx-flex :gutter="10" justify-content="flex-end">
         <fx-flex-item
-          v-for="index in 8"
+          fx-background="info"
+          :height="40"
+          :width="200"
+          />
+      </fx-flex>
+      <fx-flex :gutter="10">
+        <fx-flex-item
+          v-for="index in 3"
           :key="index"
           fx-background="info"
-          :height="50"
-          :width="50"
+          :height="40"
           />
       </fx-flex>
     </fx-flex-item>
     <fx-flex-item fx-background="fill-6">
-      <fx-flex :gutter="20" justify-content="flex-start">
+      <fx-flex :gutter="20" justify-content="flex-start" wrap="wrap">
         <fx-flex-item
           v-for="index of 10"
           :key="index"
