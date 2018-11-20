@@ -76,7 +76,7 @@ export default {
     },
     flex: { type: String, default: '1 1 auto' },
     width: { type: [Number, String], default: null },
-    height: { type: Number, default: null },
+    height: { type: [Number, String], default: null },
     gutter: { Number, default: 0 },
     inline: Boolean
   },
@@ -88,13 +88,19 @@ export default {
         justifyContent: this.justifyContent,
         alignItems: this.alignItems,
         width: Number.isInteger(this.width) ? this.width + 'px' : this.width,
-        height: this.height + 'px',
+        height: Number.isInteger(this.height) ? this.height + 'px' : this.height,
         display: this.inline ? 'inline-flex' : 'flex',
         flex: this.flex
       }
     },
     gutterStyles: function () {
       return { padding: this.gutter / 2 + 'px' }
+    }
+  },
+
+  data () {
+    return {
+      $_direction: this.direction
     }
   }
 }
@@ -108,6 +114,7 @@ export default {
 
   color: var(--style--font);
   background-color: var(--style--background);
-  border: 1px solid var(--style--border);
+  //border: 1px solid var(--style--border);
+  //border: 1px solid red;
 }
 </style>
