@@ -29,9 +29,9 @@ export default {
         ].includes(value)
       }
     },
-    flex: { type: String, default: '1 1 auto' },
+    flex: { type: String, default: null },
     width: { type: [Number, String], default: null },
-    height: { type: Number, default: null },
+    height: { type: [Number, String], default: null },
     order: { type: [String, Number], default: 0 }
   },
   computed: {
@@ -40,8 +40,8 @@ export default {
         order: this.order,
         alignSelf: this.self,
         width: Number.isInteger(this.width) ? this.width + 'px' : this.width,
-        height: this.height + 'px',
-        flex: this.width || this.height ? 'none' : this.flex
+        height: Number.isInteger(this.height) ? this.height + 'px' : this.height,
+        flex: this.flex
       }
     },
     gutterStyles: function () {
@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .fx-flex-item {
   --style--font: var(--color--font-1);
   --style--border: transparent;
@@ -66,6 +66,7 @@ export default {
 
   color: var(--style--font);
   background-color: var(--style--background);
-  border: 1px solid var(--style--border);
+  //border: 1px solid var(--style--border);
+  //border: 1px solid blue;
 }
 </style>
