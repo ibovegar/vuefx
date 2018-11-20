@@ -4,6 +4,7 @@
       <fx-flex :gutter="10">
         <fx-flex-item
           fx-background="info"
+          flex="none"
           :height="40"
           :width="200"
           />
@@ -11,6 +12,7 @@
       <fx-flex :gutter="10"  justify-content="center">
         <fx-flex-item
           fx-background="info"
+          flex="none"
           :height="40"
           :width="200"
           />
@@ -18,6 +20,7 @@
       <fx-flex :gutter="10" justify-content="flex-end">
         <fx-flex-item
           fx-background="info"
+          flex="none"
           :height="40"
           :width="200"
           />
@@ -26,8 +29,9 @@
         <fx-flex-item
           v-for="index in 3"
           :key="index"
-          fx-background="info"
           :height="40"
+          justify-content="space-between"
+          fx-background="info"
           />
       </fx-flex>
     </fx-flex-item>
