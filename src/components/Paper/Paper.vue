@@ -2,6 +2,7 @@
   <div
     class="fx-paper"
     :class="`fx-elevation-${props.elevation}`"
+    :style="{ width: props.width, height: props.height, borderRadius: props.radius }"
      >
     <slot/>
   </div>
@@ -12,7 +13,10 @@ export default {
   name: 'FxPaper',
 
   props: {
-    elevation: { type: Number, default: 0 },
+    elevation: { type: Number, default: 1 },
+    width: { type: String, default: null },
+    height: { type: String, default: null },
+    radius: { type: String, default: '3px' }
   }
 }
 </script>
