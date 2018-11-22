@@ -1,18 +1,18 @@
 <template>
   <section>
-    <FxPaper :elevation="5">
-      <FxFlex :gutter="20">
+    <Paper :elevation="5">
+      <Flex :gutter="20">
         <img :src="require('docs/assets/img/album-art.png')"/>
-        <FxFlex direction="column" :gutter="20" flex="1">
-          <FxFlex align-items="center" class="hr">
+        <Flex direction="column" flex="1">
+          <Flex align-items="center" class="hr">
             <h3 flex="1">View popular songs in related category</h3>
             <FxIcon name="dots-vertical"/>
-          </FxFlex>
-          <FxFlex direction="column" justify-content="center"  flex="1">
+          </Flex>
+          <Flex direction="column" justify-content="center"  flex="1">
             <h2>The Silver Dollars</h2>
             <h1>Track 3: Worlds In Between</h1>
-          </FxFlex>
-          <FxFlex align-items="center">
+          </Flex>
+          <Flex align-items="center">
             <div flex="1">
               <button><FxIcon name="play"/></button>
               <button><FxIcon name="pause"/></button>
@@ -22,14 +22,21 @@
               <button><FxIcon name="skip-next"/></button>
             </div>
             <FxIcon name="volume-high"/>
-          </FxFlex>
-        </FxFlex>
-      </FxFlex>
-    </FxPaper>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Paper>
   </section>
 </template>
 
 <style scoped>
+img {
+  width: 28%;
+  height: 28%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 h1 {
   margin: 0;
   @mixin font-size 26;

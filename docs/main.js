@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 
 import VueHighlightJS from 'vue-highlightjs'
-import VueUiToolkit from '@/'
 import Icons from '@/assets/icons'
 import ComponentExamples from './components/component-examples'
 import ComponentDebug from './components/component-debug'
@@ -14,9 +13,11 @@ import Title2 from './components/title-2'
 import Title3 from './components/title-3'
 import CodePreview from './components/code-preview'
 import { splitComponent } from './utils/helpers'
+
+import VueUiToolkit from '@/'
 import './styles/index.css'
 
-Vue.use(VueUiToolkit)
+Vue.use(VueUiToolkit, { disablePrefix: true })
 Vue.use(VueHighlightJS)
 Vue.use(Icons)
 
