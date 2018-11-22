@@ -1,12 +1,14 @@
 import Vmenu from './Vmenu'
 import VmenuCategory from './VmenuCategory'
 import VmenuTopic from './VmenuTopic'
+import { registerComponent } from '@/utils/plugins'
 
-Vmenu.install = function (Vue) {
-  Vue.component(Vmenu.name, Vmenu)
-  Vue.component(VmenuCategory.name, VmenuCategory)
-  Vue.component(VmenuTopic.name, VmenuTopic)
+export default {
+  install (Vue, options) {
+    registerComponent(Vue, options, Vmenu)
+    registerComponent(Vue, options, VmenuCategory)
+    registerComponent(Vue, options, VmenuTopic)
+  }
 }
 
 export { Vmenu, VmenuCategory, VmenuTopic }
-export default Vmenu
