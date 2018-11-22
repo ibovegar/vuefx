@@ -18,11 +18,11 @@ const components = {
 }
 
 /* Declare install function executed by Vue.use() */
-function install (Vue) {
+function install (Vue, options) {
   if (components.isInstalled) return
 
   Object.keys(components).forEach((key) => {
-    Vue.use(components[key])
+    Vue.use(components[key], { ...options })
   })
 
   components.isInstalled = true
