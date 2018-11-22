@@ -1,7 +1,8 @@
 import Paper from './Paper'
+import { registerComponent } from '@/utils/plugins'
 
-Paper.install = function (Vue) {
-  Vue.component(Paper.name, Paper)
+Paper.install = function (Vue, options) {
+  registerComponent(Vue, options, Paper)
 }
 
 export default Paper
