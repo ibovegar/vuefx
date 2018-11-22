@@ -27,8 +27,14 @@
 </template>
 
 <script>
+import AnimateHeight from '../AnimateHeight/'
+
 export default {
   name: 'FxTabs',
+
+  components: {
+    [AnimateHeight.name]: AnimateHeight
+  },
 
   data () {
     return {

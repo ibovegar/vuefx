@@ -47,11 +47,24 @@
 
 <script>
 import ColorMixin from '@/mixins/colors.js'
+import Dropdown from '../Dropdown/Dropdown'
+import DropdownItem from '../Dropdown/DropdownItem'
+import Chip from '../Chips/Chip'
+import ChipGroup from '../Chips/ChipGroup'
+import Icon from '../Icon'
 
 export default {
   name: 'FxSelect',
 
   mixins: [ ColorMixin ],
+
+  components: {
+    [Dropdown.name]: Dropdown,
+    [DropdownItem.name]: DropdownItem,
+    [Chip.name]: Chip,
+    [ChipGroup.name]: ChipGroup,
+    [Icon.name]: Icon
+  },
 
   data () {
     return {

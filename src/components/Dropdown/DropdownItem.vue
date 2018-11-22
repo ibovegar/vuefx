@@ -14,7 +14,7 @@
     <!--template v-else-->
       <slot/>
     <!--/template-->
-    <fx-icon
+    <Icon
       v-if="isSelected && $parent.focusCheckmark"
       class="checkmark tiny"
       name="checkmark"

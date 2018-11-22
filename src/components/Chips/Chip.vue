@@ -17,11 +17,16 @@
 
 <script>
 import ColorMixin from '@/mixins/colors.js'
+import Icon from '../Icon'
 
 export default {
   name: 'FxChip',
 
   mixins: [ ColorMixin ],
+
+  components: {
+    [Icon.name]: Icon
+  },
 
   props: {
     value: String,
