@@ -17,7 +17,7 @@ export default {
 
   props: {
     self: {
-      default: 'auto',
+      default: null,
       validator: function (value) {
         return [
           'flex-end',
@@ -32,7 +32,7 @@ export default {
     flex: { type: String, default: null },
     width: { type: [Number, String], default: null },
     height: { type: [Number, String], default: null },
-    order: { type: [String, Number], default: 0 }
+    order: { type: [String, Number], default: null }
   },
   computed: {
     rootStyles: function () {
@@ -50,9 +50,11 @@ export default {
   },
 
   created () {
-    if (this.$parent.$options._componentTag !== 'fx-flex') {
-      this.$destroy()
-      throw new Error('fx-flex-item be be placed within a fx-flex wrapper')
+    let tag = this.$parent.$options._componentTag
+
+    if (tag !== 'fx-flex' || tag !== 'Flex') {
+      // this.$destroy()
+      // throw new Error('fx-flex-item be be placed within a fx-flex wrapper')
     }
   }
 }

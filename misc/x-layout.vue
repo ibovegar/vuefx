@@ -11,7 +11,7 @@
               <fx-flex-item flex="1">
                 <h3>View popular songs in related category</h3>
               </fx-flex-item>
-              <fx-flex-item :width="22">
+              <fx-flex-item>
                 <fx-icon name="dots-vertical"/>
               </fx-flex-item>
             </fx-flex>
@@ -43,6 +43,14 @@
 </template>
 
 <style scoped>
+.fx-flex {
+  border: 1px solid blue;
+}
+
+.fx-flex-item {
+  border: 1px solid red;
+}
+
 h1 {
   margin: 10px 0;
   @mixin font-size 26;

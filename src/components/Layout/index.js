@@ -1,10 +1,10 @@
 import Flex from './Flex'
-import FlexItem from './FlexItem'
+// import Grid from './Grid'
 
-export { Flex, FlexItem }
+export { Flex } // Grid
 export default {
   install (Vue) {
     Vue.component(Flex.name, Flex)
-    Vue.component(FlexItem.name, FlexItem)
+    // Vue.component(Grid.name, Grid)
   }
 }

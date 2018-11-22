@@ -9,7 +9,7 @@
     </component-demo>
     <component-api :api="api"/>
     <component-examples>
-      <component-demo title="Advanced layout" :component="Advanced" :code="AdvancedCode">
+      <component-demo title="Layout example" :component="Layout" :code="LayoutCode">
         Lorem ipsum dolor sit amet
       </component-demo>
     </component-examples>
@@ -17,13 +17,11 @@
 </template>
 
 <script>
-import api from './api'  
+import api from './api'
 import Usage from './x-usage'
 import UsageRaw from '!raw-loader!./x-usage'
-import Advanced from './x-advanced'
-import AdvancedRaw from '!raw-loader!./x-advanced'
-
-Advanced
+import Layout from './x-layout'
+import LayoutRaw from '!raw-loader!./x-layout'
 
 export default {
   data () {
@@ -31,8 +29,8 @@ export default {
       api,
       Usage,
       UsageCode: this.$splitComponent(UsageRaw),
-      Advanced,
-      AdvancedCode: this.$splitComponent(AdvancedRaw)
+      Layout,
+      LayoutCode: this.$splitComponent(LayoutRaw)
     }
   }
 }

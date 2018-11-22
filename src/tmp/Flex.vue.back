@@ -1,7 +1,7 @@
 <template>
   <div
     class="ks-flex"
-    :style="[gutterStyles, colorStyles, rootStyles]"
+    :style="[colorStyles, rootStyles]"
     >
     <slot></slot>
   </div>
@@ -74,7 +74,6 @@ export default {
         ].includes(value)
       }
     },
-    flex: { type: String, default: '1 1 auto' },
     width: { type: [Number, String], default: null },
     height: { type: [Number, String], default: null },
     gutter: { Number, default: 0 },
@@ -87,14 +86,12 @@ export default {
         flexWrap: this.wrap,
         justifyContent: this.justifyContent,
         alignItems: this.alignItems,
+        alignContent: this.alignContent,
         width: Number.isInteger(this.width) ? this.width + 'px' : this.width,
         height: Number.isInteger(this.height) ? this.height + 'px' : this.height,
         display: this.inline ? 'inline-flex' : 'flex',
-        flex: this.flex
+        padding: this.gutter / 2 + 'px'
       }
-    },
-    gutterStyles: function () {
-      return { padding: this.gutter / 2 + 'px' }
     }
   },
 

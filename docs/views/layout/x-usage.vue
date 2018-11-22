@@ -1,6 +1,6 @@
 <template>
   <fx-flex direction="column" :gutter="40">
-    <fx-flex-item fx-background="fill-6">
+    <!--fx-flex-item fx-background="fill-6">
       <fx-flex :gutter="10">
         <fx-flex-item
           fx-background="info"
@@ -54,6 +54,6 @@
           </fx-flex>
         </fx-flex-item>
       </fx-flex>
-    </fx-flex-item>
+    </fx-flex-item-->
   </fx-flex>
 </template>
