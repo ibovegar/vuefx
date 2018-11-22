@@ -1,10 +1,12 @@
 import Dropdown from './Dropdown'
 import DropdownItem from './DropdownItem'
+import { registerComponent } from '@/utils/plugins'
 
-Dropdown.install = function (Vue) {
-  Vue.component(Dropdown.name, Dropdown)
-  Vue.component(DropdownItem.name, DropdownItem)
+export default {
+  install (Vue, options) {
+    registerComponent(Vue, options, Dropdown)
+    registerComponent(Vue, options, DropdownItem)
+  }
 }
 
 export { Dropdown, DropdownItem }
-export default Dropdown

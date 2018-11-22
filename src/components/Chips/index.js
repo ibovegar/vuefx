@@ -1,10 +1,12 @@
-import Chips from './Chip'
+import Chip from './Chip'
 import ChipGroup from './ChipGroup'
+import { registerComponent } from '@/utils/plugins'
 
-Chips.install = function (Vue) {
-  Vue.component(Chips.name, Chips)
-  Vue.component(ChipGroup.name, ChipGroup)
+export default {
+  install (Vue, options) {
+    registerComponent(Vue, options, Chip)
+    registerComponent(Vue, options, ChipGroup)
+  }
 }
 
-export { Chips, ChipGroup }
-export default Chips
+export { Chip, ChipGroup }
