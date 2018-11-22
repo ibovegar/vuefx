@@ -18,13 +18,7 @@ import AppRight from './components/app-right'
 
 export default {
   name: 'app',
-
-  components: { AppLeft, AppRight, AppTop },
-
-  data () {
-    return {
-    }
-  }
+  components: { AppLeft, AppRight, AppTop }
 }
 </script>
 
