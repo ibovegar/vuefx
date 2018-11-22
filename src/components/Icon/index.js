@@ -1,7 +1,10 @@
-import IconBase from './Icon'
+import Icons from './Icon'
+import IconSet from '@/assets/icons'
+import { registerComponent } from '@/utils/plugins'
 
-IconBase.install = function (Vue) {
-  Vue.component(IconBase.name, IconBase)
+Icons.install = function (Vue, options) {
+  registerComponent(Vue, options, Icons)
+  Vue.use(IconSet)
 }
 
-export default IconBase
+export default Icons
