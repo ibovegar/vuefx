@@ -24,7 +24,7 @@
 import Expandable from '@/mixins/expandable.js'
 
 export default {
-  name: 'fx-vmenu-category',
+  name: 'FxVmenuCategory',
 
   mixins: [ Expandable ],
 

@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: 'fx-tabs',
+  name: 'FxTabs',
 
   data () {
     return {

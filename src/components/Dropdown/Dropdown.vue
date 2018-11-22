@@ -32,7 +32,7 @@ import ClickOutside from '@/directives/click-outside'
 import { on, off } from '@/utils/helpers'
 
 export default {
-  name: 'fx-dropdown',
+  name: 'FxDropdown',
 
   directives: { ClickOutside },
 

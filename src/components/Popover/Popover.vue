@@ -23,7 +23,7 @@ import PopperMixin from '@/mixins/popper.js'
 import { on, off } from '@/utils/helpers'
 
 export default {
-  name: 'fx-popover',
+  name: 'FxPopover',
 
   directives: { ClickOutside },
 

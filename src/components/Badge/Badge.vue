@@ -21,7 +21,7 @@
 import ColorMixin from '@/mixins/colors.js'
 
 export default {
-  name: 'fx-badge',
+  name: 'FxBadge',
 
   mixins: [ ColorMixin ],
 

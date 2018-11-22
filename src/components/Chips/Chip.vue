@@ -19,7 +19,7 @@
 import ColorMixin from '@/mixins/colors.js'
 
 export default {
-  name: 'fx-chip',
+  name: 'FxChip',
 
   mixins: [ ColorMixin ],
 

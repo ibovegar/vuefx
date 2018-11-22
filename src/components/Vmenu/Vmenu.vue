@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'fx-vmenu',
+  name: 'FxVmenu',
 
   props: {
     value: String,

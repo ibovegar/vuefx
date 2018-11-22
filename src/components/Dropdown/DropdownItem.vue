@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'fx-dropdown-item',
+  name: 'FxDropdownItem',
 
   props: {
     value: { type: String, default: null },

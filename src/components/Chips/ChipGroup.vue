@@ -14,7 +14,7 @@ import DragScroll from '@/directives/drag-scroll'
 import ColorMixin from '@/mixins/colors.js'
 
 export default {
-  name: 'fx-chip-group',
+  name: 'FxChipGroup',
 
   mixins: [ ColorMixin ],
 

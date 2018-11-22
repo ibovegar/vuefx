@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'fx-vmenu-topic',
+  name: 'FxVmenuTopic',
 
   props: {
     value: String,
