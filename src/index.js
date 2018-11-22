@@ -10,10 +10,11 @@ import Chips from './components/Chips'
 import Dropdown from './components/Dropdown'
 import Vmenu from './components/Vmenu'
 import Layout from './components/Layout'
+import Paper from './components/Paper'
 
 const components = {
   AnimateHeight, Badge, Chips, Dropdown, Icon, Popover, Select, Tabs, Vmenu,
-  Layout
+  Layout, Paper
 }
 
 /* Declare install function executed by Vue.use() */
