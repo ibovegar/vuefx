@@ -1,31 +1,31 @@
 <template>
   <aside class="app-left">
-    <fx-vmenu v-model="selectedNavItem" vue-router>
-      <fx-vmenu-category value="/quick_start" label="Quick start" expanded>
-        <fx-vmenu-topic value="/installation" label="Installation"/>
-        <fx-vmenu-topic value="/usage" label="Usage & other"/>
-      </fx-vmenu-category>
-      <fx-vmenu-category value="/themes" label="Themes"/>
-      <fx-vmenu-category value="/colors" label="Colors"/>
-      <fx-vmenu-category value="/customization" label="Customization" expanded>
-        <fx-vmenu-topic value="/tabs" label="Tabs"/>
-        <fx-vmenu-topic value="/badge" label="Badge"/>
-        <fx-vmenu-topic value="/button" label="Button"/>
-      </fx-vmenu-category>
-      <fx-vmenu-category value="/typograpy" label="Typograpy"/>
-      <fx-vmenu-category value="/layout" label="Layout"/>
-      <fx-vmenu-category value="/icons" label="Icons"/>
-      <fx-vmenu-category label="Components">
-        <fx-vmenu-topic value="/badge" label="Badge"/>
-        <fx-vmenu-topic value="/chips" label="Chips"/>
-        <fx-vmenu-topic value="/dropdown" label="Dropdown"/>
-        <fx-vmenu-topic value="/popover" label="Popover"/>
-        <fx-vmenu-topic value="/select" label="Select"/>
-        <fx-vmenu-topic value="/tabs" label="Tabs"/>
-        <fx-vmenu-topic value="/tooltip" label="Tooltip"/>
-        <fx-vmenu-topic value="/vmenu" label="Vmenu"/>
-      </fx-vmenu-category>
-    </fx-vmenu>
+    <Vmenu v-model="selectedNavItem" vue-router>
+      <VmenuCategory value="/quick_start" label="Quick start" expanded>
+        <VmenuTopic value="/installation" label="Installation"/>
+        <VmenuTopic value="/usage" label="Usage & other"/>
+      </VmenuCategory>
+      <VmenuCategory value="/themes" label="Themes"/>
+      <VmenuCategory value="/colors" label="Colors"/>
+      <VmenuCategory value="/customization" label="Customization" expanded>
+        <VmenuTopic value="/tabs" label="Tabs"/>
+        <VmenuTopic value="/badge" label="Badge"/>
+        <VmenuTopic value="/button" label="Button"/>
+      </VmenuCategory>
+      <VmenuCategory value="/typograpy" label="Typograpy"/>
+      <VmenuCategory value="/layout" label="Layout"/>
+      <VmenuCategory value="/icons" label="Icons"/>
+      <VmenuCategory label="Components">
+        <VmenuTopic value="/badge" label="Badge"/>
+        <VmenuTopic value="/chips" label="Chips"/>
+        <VmenuTopic value="/dropdown" label="Dropdown"/>
+        <VmenuTopic value="/popover" label="Popover"/>
+        <VmenuTopic value="/select" label="Select"/>
+        <VmenuTopic value="/tabs" label="Tabs"/>
+        <VmenuTopic value="/tooltip" label="Tooltip"/>
+        <VmenuTopic value="/vmenu" label="Vmenu"/>
+      </VmenuCategory>
+    </Vmenu>
   </aside>
 </template>
 

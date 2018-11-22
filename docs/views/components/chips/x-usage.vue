@@ -1,7 +1,7 @@
 <template>
   <section>
-    <fx-chip raised>Apple</fx-chip>
-    <fx-chip raised close>Banana</fx-chip>
+    <Chip raised>Apple</Chip>
+    <Chip raised close>Banana</Chip>
   </section>
 </template>
 

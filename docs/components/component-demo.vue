@@ -7,38 +7,36 @@
     <title-3 v-if="isExample" :title="title"><slot/></title-3>
     <title-2 v-else :title="title"><slot/></title-2>
     <div class="box">
-      <fx-tabs v-model="selectedTab" @input="onTabChange" background="fill-4">
+      <Tabs v-model="selectedTab" @input="onTabChange" background="fill-4">
         <component slot="Result" class="box__result" :is="component" ref="component"/>
         <code-preview v-if="code.template" slot="HTML" type="html" :code="code.template"/>
         <code-preview v-if="code.script" slot="JS" type="javascript" :code="code.script"/>
         <code-preview v-if="code.style" slot="CSS" type="css" :code="code.style"/>
-      </fx-tabs>
+      </Tabs>
       <div class="box__tools">
-        <fx-dropdown
+        <Dropdown
           v-model="selectedTheme"
           @input="selectedTheme = selectedTheme >= 2 ? 0 : selectedTheme + 1"
           auto-width
-          focus-check
           close-on-click
-          overlay
           >
-          <fx-icon slot="trigger" name="invert-colors"/>
-          <fx-dropdown-item value="default">Default</fx-dropdown-item>
-          <fx-dropdown-item value="light">Light</fx-dropdown-item>
-          <fx-dropdown-item value="dark">Dark</fx-dropdown-item>
-        </fx-dropdown>
-        <fx-dropdown auto-width close-on-click overlay>
-          <fx-icon slot="trigger" name="dots-vertical"/>
-          <fx-dropdown-item value="debug" :disabled="!enableDebugging" @click.native="toggleDebugger">
-            <fx-icon name="bug-outline"/>&nbsp; Toggle debug mode
-          </fx-dropdown-item>
-          <fx-dropdown-item value="github">
-            <fx-icon name="github-circle"/>&nbsp; Go to github page
-          </fx-dropdown-item>
-          <fx-dropdown-item value="codepen">
-            <fx-icon name="codepen"/>&nbsp; Open in codepen
-          </fx-dropdown-item>
-        </fx-dropdown>
+          <Icon slot="trigger" name="invert-colors"/>
+          <DropdownItem value="default">Default</DropdownItem>
+          <DropdownItem value="light">Light</DropdownItem>
+          <DropdownItem value="dark">Dark</DropdownItem>
+        </Dropdown>
+        <Dropdown auto-width close-on-click overlay>
+          <Icon slot="trigger" name="dots-vertical"/>
+          <DropdownItem value="debug" :disabled="!enableDebugging" @click.native="toggleDebugger">
+            <Icon name="bug-outline"/>&nbsp; Toggle debug mode
+          </DropdownItem>
+          <DropdownItem value="github">
+            <Icon name="github-circle"/>&nbsp; Go to github page
+          </DropdownItem>
+          <DropdownItem value="codepen">
+            <Icon name="codepen"/>&nbsp; Open in codepen
+          </DropdownItem>
+        </Dropdown>
       </div>
     </div>
   </div>

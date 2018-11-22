@@ -1,11 +1,11 @@
 <template>
   <section>
-    <fx-badge v-model="value" :offset-x="-10" :offset-y="-12" raised sticky>
-      <fx-icon name="email" class="medium"/>
-    </fx-badge>
-    <fx-badge v-model="value" :offset-x="-10" :offset-y="-12" raised>
-      <fx-icon name="email" class="medium"/>
-    </fx-badge>
+    <Badge v-model="value" :offset-x="-10" :offset-y="-12" raised sticky>
+      <Icon name="email" class="medium"/>
+    </Badge>
+    <Badge v-model="value" :offset-x="-10" :offset-y="-12" raised>
+      <Icon name="email" class="medium"/>
+    </Badge>
   </section>
 </template>
 

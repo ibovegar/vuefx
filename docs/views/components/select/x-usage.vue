@@ -1,13 +1,13 @@
 <template>
   <section>
-    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
-    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
-    <fx-select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+    <Select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+    <Select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+    <Select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+    <Select v-model="selectedFruit" label="Fruit" :options="fruits" fixed/>
+    <Select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+    <Select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+    <Select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
+    <Select v-model="selectedFruit" label="Fruit" :options="fruits" theme="boxed" fixed/>
   </section>
 </template>
 

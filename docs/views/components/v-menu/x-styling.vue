@@ -1,19 +1,19 @@
 <template>
   <section>
-    <fx-vmenu v-model="selectedItem">
-      <fx-vmenu-category value="lorem ipsum dolor" label="lorem ipsum dolor" expanded>
-        <fx-vmenu-topic value="consectetur adipiscing elit" label=" consectetur adipiscing elit"/>
-        <fx-vmenu-topic value="sed do eiusmod tempor" label="sed do eiusmod tempor"/>
-        <fx-vmenu-topic value="consectetur adipiscing elit" label=" consectetur adipiscing elit"/>
-        <fx-vmenu-topic value="sed do eiusmod tempor" label="sed do eiusmod tempor"/>
-      </fx-vmenu-category>
-      <fx-vmenu-category value="ncididunt ut labore" label="ncididunt ut labore"/>
-      <fx-vmenu-category value="exercitation ullamco laboris" label="exercitation ullamco laboris"/>
-      <fx-vmenu-category value="reprehenderit in voluptate" label="reprehenderit in voluptate">
-        <fx-vmenu-topic value="sint occaecat" label="sint occaecat"/>
-        <fx-vmenu-topic value="culpa qui officia" label="culpa qui officia"/>
-      </fx-vmenu-category>
-    </fx-vmenu>
+    <Vmenu v-model="selectedItem">
+      <VmenuCategory value="lorem ipsum dolor" label="lorem ipsum dolor" expanded>
+        <VmenuTopic value="consectetur adipiscing elit" label=" consectetur adipiscing elit"/>
+        <VmenuTopic value="sed do eiusmod tempor" label="sed do eiusmod tempor"/>
+        <VmenuTopic value="consectetur adipiscing elit" label=" consectetur adipiscing elit"/>
+        <VmenuTopic value="sed do eiusmod tempor" label="sed do eiusmod tempor"/>
+      </VmenuCategory>
+      <VmenuCategory value="ncididunt ut labore" label="ncididunt ut labore"/>
+      <VmenuCategory value="exercitation ullamco laboris" label="exercitation ullamco laboris"/>
+      <VmenuCategory value="reprehenderit in voluptate" label="reprehenderit in voluptate">
+        <VmenuTopic value="sint occaecat" label="sint occaecat"/>
+        <VmenuTopic value="culpa qui officia" label="culpa qui officia"/>
+      </VmenuCategory>
+    </Vmenu>
   </section>
 </template>
 

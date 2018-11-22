@@ -2,19 +2,19 @@
   <header class="app-top">
     <section class="left">
       <!--img :src="require('../assets/img/logo.png')" height="40px"/-->
-      <fx-icon name="bug-outline" class="medium">Logo</fx-icon>
+      <Icon name="bug-outline" class="medium">Logo</Icon>
       <h2>VueFX</h2>
     </section>
     <section class="middle">
       <ul>
-        <li><fx-icon name="github-circle"/></li>
-        <li><a>Support <fx-icon name="chevron-down"/></a></li>
-        <li><a>Details <fx-icon name="chevron-down"/></a></li>
+        <li><Icon name="github-circle"/></li>
+        <li><a>Support <Icon name="chevron-down"/></a></li>
+        <li><a>Details <Icon name="chevron-down"/></a></li>
       </ul>
     </section>
      <section class="right">
        <div class="wrapper">
-         <fx-icon name="magnify" :size="20"/>
+         <Icon name="magnify" :size="20"/>
          Search...
        </div>
          <!--fx-select

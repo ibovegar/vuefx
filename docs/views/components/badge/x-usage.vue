@@ -1,12 +1,12 @@
 <template>
   <section>
-    <fx-badge :value="4" :offset-x="-10" :offset-y="-12" raised>
-      <fx-icon name="email" class="medium"/>
-    </fx-badge>
-    <fx-badge :value="5" :offset-x="-9" :offset-y="-6" raised>
+    <Badge :value="4" :offset-x="-10" :offset-y="-12" raised>
+      <Icon name="email" class="medium"/>
+    </Badge>
+    <Badge :value="5" :offset-x="-9" :offset-y="-6" raised>
       <button>LOREM IPSUM</button>
-    </fx-badge>
-    <fx-badge :value="6">LOREM IPSUM </fx-badge>
+    </Badge>
+    <Badge :value="6">LOREM IPSUM </Badge>
   </section>
 </template>
 

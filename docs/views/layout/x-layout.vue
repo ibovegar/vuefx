@@ -6,7 +6,7 @@
         <Flex direction="column" flex="1">
           <Flex align-items="center" class="hr">
             <h3 flex="1">View popular songs in related category</h3>
-            <FxIcon name="dots-vertical"/>
+            <Icon name="dots-vertical"/>
           </Flex>
           <Flex direction="column" justify-content="center"  flex="1">
             <h2>The Silver Dollars</h2>
@@ -14,14 +14,14 @@
           </Flex>
           <Flex align-items="center">
             <div flex="1">
-              <button><FxIcon name="play"/></button>
-              <button><FxIcon name="pause"/></button>
-              <button><FxIcon name="skip-previous"/></button>
-              <button><FxIcon name="rewind"/></button>
-              <button><FxIcon name="fast-forward"/></button>
-              <button><FxIcon name="skip-next"/></button>
+              <button><Icon name="play"/></button>
+              <button><Icon name="pause"/></button>
+              <button><Icon name="skip-previous"/></button>
+              <button><Icon name="rewind"/></button>
+              <button><Icon name="fast-forward"/></button>
+              <button><Icon name="skip-next"/></button>
             </div>
-            <FxIcon name="volume-high"/>
+            <Icon name="volume-high"/>
           </Flex>
         </Flex>
       </Flex>

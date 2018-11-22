@@ -1,5 +1,5 @@
 <template>
-  <fx-tabs v-model="selectedPalette">
+  <Tabs v-model="selectedPalette">
     <article slot="Background">
       <span
         v-for="color in fill"
@@ -27,7 +27,7 @@
         <h1>{{ color.name }}</h1>
       </span>
     </article>
-  </fx-tabs>
+  </Tabs>
 </template>
 
 <script>

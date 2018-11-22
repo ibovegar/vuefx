@@ -1,7 +1,7 @@
 <template>
   <section>
     <component-debug :width="40" show>
-      <fx-badge
+      <Badge
         :value="567"
         :position="currentPos"
         :offset-x="Number(offsetX)"
@@ -9,7 +9,7 @@
         raised
         >
         <button @click="changePos">{{ currentPos }}</button>
-      </fx-badge>
+      </Badge>
       <div slot="debug">
         <form>
           <label>

@@ -1,9 +1,9 @@
 <template>
   <div class="color-playground">
     <span class="left">
-      <fx-select v-model="currentFill" :height="40" label="Fill color" :options="fill"/>
-      <fx-select v-model="currentBorder" :height="40" label="Border color" :options="border"/>
-      <fx-select v-model="currentFont" :height="40" label="Font color" :options="font"/>
+      <Select v-model="currentFill" :height="40" label="Fill color" :options="fill"/>
+      <Select v-model="currentBorder" :height="40" label="Border color" :options="border"/>
+      <Select v-model="currentFont" :height="40" label="Font color" :options="font"/>
     </span>
     <span class="right">
       <div :style="cssProps">Lorem ipsum dolor sit amet.</div>

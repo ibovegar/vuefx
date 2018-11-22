@@ -7,7 +7,7 @@
       :key="component.name"
       >
       <h3 v-if="component.name">{{ component.name }}</h3>
-      <fx-tabs v-model="selected" background="flat">
+      <Tabs v-model="selected" background="flat">
         <template slot="Props" v-if="component.props && component.props.length">
           <api-table
             :data="component.props"
@@ -32,7 +32,7 @@
             :columns="['name', 'description', 'value']"
             />
         </template>
-      </fx-tabs>
+      </Tabs>
     </div>
   </div>
 </template>

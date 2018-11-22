@@ -1,13 +1,13 @@
 <template>
   <section>
-    <fx-popover :inherit-width="true">
+    <Popover :inherit-width="true">
       <button slot="trigger">Inherit width</button>
       <div class="wrapper"><p>Inherit width of trigger</p></div>
-    </fx-popover>
-    <fx-popover :width="300">
+    </Popover>
+    <Popover :width="300">
       <button slot="trigger">Custom width</button>
       <div class="wrapper"><p>Width set to 300px</p></div>
-    </fx-popover>
+    </Popover>
   </section>
 </template>
 

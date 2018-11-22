@@ -1,10 +1,10 @@
 <template>
   <section>
-    <fx-tabs v-model="currentTab">
+    <Tabs v-model="currentTab">
       <div slot="Template">Lorem ipsum</div>
       <div slot="Javascript">Dolor</div>
       <div slot="Stylesheet">Sit amet</div>
-    </fx-tabs>
+    </Tabs>
   </section>
 </template>
 

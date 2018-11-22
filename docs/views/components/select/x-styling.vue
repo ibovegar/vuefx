@@ -1,12 +1,12 @@
 <template>
   <section>
-    <fx-select
+    <Select
       label="Default style"
       :options="types"
       v-model="selectedTypes"
       fixed
       />
-    <fx-select
+    <Select
       label="Secondary colors"
       :options="types"
       fx-color="secondary"
@@ -15,7 +15,7 @@
       v-model="selectedTypes"
       fixed
       />
-    <fx-select
+    <Select
       label="Alert colors"
       :options="types"
       fx-color="alert"
@@ -24,7 +24,7 @@
       v-model="selectedTypes"
       fixed
       />
-    <fx-select
+    <Select
       label="Soft colors"
       :options="types"
       fx-color="font-5"
@@ -33,7 +33,7 @@
       v-model="selectedTypes"
       fixed
       />
-    <fx-select
+    <Select
       label="Mixed colors"
       :options="types"
       :fx-styles="customStyles"

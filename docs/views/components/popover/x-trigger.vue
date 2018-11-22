@@ -1,15 +1,15 @@
 <template>
   <section>
-    <fx-popover>
-      <fx-icon slot="trigger" name="icon-close"/>
+    <Popover>
+      <Icon slot="trigger" name="icon-close"/>
       <p close-popover>Click here to close</p>
-    </fx-popover>
-    <fx-popover>
+    </Popover>
+    <Popover>
       <button slot="trigger">
         SHOW POPOVER
       </button>
       <p close-popover>Click here to close</p>
-    </fx-popover>
+    </Popover>
   </section>
 </template>
 

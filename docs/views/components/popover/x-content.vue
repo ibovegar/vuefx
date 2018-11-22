@@ -1,21 +1,21 @@
 <template>
   <section>
-    <fx-popover :inherit-width="true">
+    <Popover :inherit-width="true">
       <button slot="trigger">Inherit width</button>
       <div class="wrapper"><p>Inherit width of trigger</p></div>
-    </fx-popover>
-    <fx-popover :width="300">
+    </Popover>
+    <Popover :width="300">
       <button slot="trigger">Custom width</button>
       <div class="wrapper"><p>Width set to 300px</p></div>
-    </fx-popover>
-    <fx-popover :offset="20">
+    </Popover>
+    <Popover :offset="20">
       <button slot="trigger">Positiv offset</button>
       <div class="wrapper"><p>20px offset</p></div>
-    </fx-popover>
-    <fx-popover :offset="-20">
+    </Popover>
+    <Popover :offset="-20">
       <button slot="trigger">Negativ offset</button>
       <div class="wrapper"><p>-20px offset</p></div>
-    </fx-popover>
+    </Popover>
     <!-- :options="{modifiers: { offset: { offset: '30'}}}" -->
     <!--ks-popover>
       <ks-button

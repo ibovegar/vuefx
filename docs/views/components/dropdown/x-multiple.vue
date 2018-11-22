@@ -1,26 +1,20 @@
 <template>
   <section>
-    <button @click="selectedItems = ['print']">
-      Select print
-    </button>
-    <fx-dropdown
+    <button @click="selectedItems = ['print']">Select print</button>
+    <Dropdown
       v-model="selectedItems"
-      multiple
       focus-color
-      focus-check
       >
       <button slot="trigger">Main menu</button>
-      <fx-dropdown-item value="save" close-popover>Save</fx-dropdown-item>
-      <fx-dropdown-item separator/>
-      <fx-dropdown-item disabled value="save_all">Save all</fx-dropdown-item>
-      <fx-dropdown-item value="preferences">Preferences</fx-dropdown-item>
-      <fx-dropdown-item value="print">Print</fx-dropdown-item>
-      <fx-dropdown-item separator/>
-      <fx-dropdown-item value="print_preview">Print preview</fx-dropdown-item>
-      <fx-dropdown-item value="help">
-        <fx-icon name="account-circle"/>User account
-      </fx-dropdown-item>
-    </fx-dropdown>
+      <DropdownItem value="save" close-popover>Save</DropdownItem>
+      <DropdownItem separator/>
+      <DropdownItem disabled value="save_all">Save all</DropdownItem>
+      <DropdownItem value="preferences">Preferences</DropdownItem>
+      <DropdownItem value="print">Print</DropdownItem>
+      <DropdownItem separator/>
+      <DropdownItem value="print_preview">Print preview</DropdownItem>
+      <DropdownItem value="help"><Icon name="account-circle"/>User account</DropdownItem>
+    </Dropdown>
     <p>
       Selected items: {{ selectedItems }}
     </p>

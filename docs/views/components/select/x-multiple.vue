@@ -1,7 +1,7 @@
 <template>
   <section>
     <component-debug :width="30">
-      <fx-select
+      <Select
         label="Selected fruits"
         transition="slide-down"
         :options="types"
@@ -9,7 +9,7 @@
         multiple
         fixed
         />
-      <fx-select
+      <Select
         label="Selected fruits"
         transition="slide-down"
         :options="types"

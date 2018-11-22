@@ -1,29 +1,21 @@
 <template>
   <section>
-    <fx-button @button-clicked="selectedItem = 'print'">
-      Select print
-    </fx-button>
-    <fx-dropdown
+    <button @click="selectedItem = 'print'">Select print</button>
+    <Dropdown
       v-model="selectedItem"
-      inherit-width
-      focus-check
       close-on-click
       overlay
       >
-      <fx-icon slot="trigger" class="main-menu" name="settings">
-        Preferences
-      </fx-icon>
-      <fx-dropdown-item value="save">
-        <fx-icon name="account-circle"/>
-      </fx-dropdown-item>
-      <fx-dropdown-item separator/>
-      <fx-dropdown-item disabled value="save_all">Save all</fx-dropdown-item>
-      <fx-dropdown-item value="preferences">Preferences</fx-dropdown-item>
-      <fx-dropdown-item value="print">Print</fx-dropdown-item>
-      <fx-dropdown-item separator/>
-      <fx-dropdown-item value="print_preview">Print preview</fx-dropdown-item>
-      <fx-dropdown-item value="help">Help</fx-dropdown-item>
-    </fx-dropdown>
+      <Icon slot="trigger" class="main-menu" name="settings">Preferences</Icon>
+      <DropdownItem value="save"><Icon name="account-circle"/></DropdownItem>
+      <DropdownItem separator/>
+      <DropdownItem disabled value="save_all">Save all</DropdownItem>
+      <DropdownItem value="preferences">Preferences</DropdownItem>
+      <DropdownItem value="print">Print</DropdownItem>
+      <DropdownItem separator/>
+      <DropdownItem value="print_preview">Print preview</DropdownItem>
+      <DropdownItem value="help">Help</DropdownItem>
+    </Dropdown>
     Clicked item: {{ selectedItem }}
   </section>
 </template>
