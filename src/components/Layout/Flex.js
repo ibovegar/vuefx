@@ -85,16 +85,20 @@ export default {
 
     if (children) {
       for (let child of children) {
-        if (child.data && child.data.attrs) {
-          let styles = {
-            order: child.data.attrs.order || null,
-            alignSelf: child.data.attrs.self || null,
-            margin: props.gutter ? props.gutter / 2 + 'px' : null,
-            flex: child.data.attrs.flex || null
-          }
+        let styles = {}
+        child.data = child.data || {}
 
-          child.data.staticStyle = { ...child.data.staticStyle, ...styles }
+        if (props.gutter) {
+          styles.margin = props.gutter ? props.gutter / 2 + 'px' : null
         }
+
+        if (child.data.attrs) {
+          styles.order = child.data.attrs.order || null
+          styles.alignSelf = child.data.attrs.self || null
+          styles.flex = child.data.attrs.flex || null
+        }
+
+        child.data.staticStyle = { ...child.data.staticStyle, ...styles }
       }
     }
     return h(props.tag, data, children)
