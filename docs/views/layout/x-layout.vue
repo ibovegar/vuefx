@@ -1,29 +1,31 @@
 <template>
   <section>
-    <FxFlex :gutter="20">
-      <img :src="require('docs/assets/img/album-art.png')"/>
-      <FxFlex direction="column" :gutter="20" flex="1">
-        <FxFlex align-items="center" class="hr">
-          <h3 flex="1">View popular songs in related category</h3>
-          <FxIcon name="dots-vertical"/>
-        </FxFlex>
-        <FxFlex direction="column" justify-content="center"  flex="1">
-          <h2>The Silver Dollars</h2>
-          <h1>Track 3: Worlds In Between</h1>
-        </FxFlex>
-        <FxFlex align-items="center">
-          <div flex="1">
-            <button><FxIcon name="play"/></button>
-            <button><FxIcon name="pause"/></button>
-            <button><FxIcon name="skip-previous"/></button>
-            <button><FxIcon name="rewind"/></button>
-            <button><FxIcon name="fast-forward"/></button>
-            <button><FxIcon name="skip-next"/></button>
-          </div>
-          <FxIcon name="volume-high"/>
+    <FxPaper :elevation="5">
+      <FxFlex :gutter="20">
+        <img :src="require('docs/assets/img/album-art.png')"/>
+        <FxFlex direction="column" :gutter="20" flex="1">
+          <FxFlex align-items="center" class="hr">
+            <h3 flex="1">View popular songs in related category</h3>
+            <FxIcon name="dots-vertical"/>
+          </FxFlex>
+          <FxFlex direction="column" justify-content="center"  flex="1">
+            <h2>The Silver Dollars</h2>
+            <h1>Track 3: Worlds In Between</h1>
+          </FxFlex>
+          <FxFlex align-items="center">
+            <div flex="1">
+              <button><FxIcon name="play"/></button>
+              <button><FxIcon name="pause"/></button>
+              <button><FxIcon name="skip-previous"/></button>
+              <button><FxIcon name="rewind"/></button>
+              <button><FxIcon name="fast-forward"/></button>
+              <button><FxIcon name="skip-next"/></button>
+            </div>
+            <FxIcon name="volume-high"/>
+          </FxFlex>
         </FxFlex>
       </FxFlex>
-    </FxFlex>
+    </FxPaper>
   </section>
 </template>
 
