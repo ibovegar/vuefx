@@ -25,7 +25,7 @@
           <DropdownItem value="light">Light</DropdownItem>
           <DropdownItem value="dark">Dark</DropdownItem>
         </Dropdown>
-        <Dropdown auto-width close-on-click overlay>
+        <Dropdown auto-width close-on-click>
           <Icon slot="trigger" name="dots-vertical"/>
           <DropdownItem value="debug" :disabled="!enableDebugging" @click.native="toggleDebugger">
             <Icon name="bug-outline"/>&nbsp; Toggle debug mode
@@ -135,7 +135,6 @@ export default {
       .fx-icon {
         color: var(--color--font-2);
         cursor: pointer;
-        width: 10px;
         border-top: 1px solid transparent;
 
         &:hover {
