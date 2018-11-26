@@ -1,10 +1,10 @@
 <template>
   <table class="component-api-table">
     <tr>
-      <th v-for="(column, index) in columns">{{ columns[index] }}</th>
+      <th v-for="(column, index) in columns" :key="index">{{ columns[index] }}</th>
     </tr>
     <tr v-for="prop in data" :key="prop.name">
-      <td v-for="column in columns" v-html="prop[column]"/>
+      <td v-for="(column, index) in columns" :key="index" v-html="prop[column]"/>
     </tr>
   </table>
 </template>
