@@ -32,7 +32,7 @@ export default {
 
   data () {
     return {
-      $_gutter: this.gutter
+      $_chipGroupGutter: this.gutter
     }
   },
 
@@ -67,6 +67,7 @@ export default {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   &.is-draggable {
     flex-wrap: nowrap;

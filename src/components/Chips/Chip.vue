@@ -63,8 +63,8 @@ export default {
   },
 
   created () {
-    if (this.$parent.$options._componentTag === 'fx-chip-group') {
-      this.gutter = this.$parent._data.$_gutter
+    if (this.$parent._data.$_chipGroupGutter) {
+      this.gutter = this.$parent._data.$_chipGroupGutter
     }
   }
 }
@@ -90,7 +90,7 @@ export default {
   flex-shrink: 0;
 
   &.is-raised {
-    @mixin elevation 2;
+    @mixin elevation 1;
   }
 
   .fx-icon[name="close"] {
