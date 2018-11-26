@@ -12,6 +12,7 @@
         <VmenuTopic value="/badge" label="Badge"/>
         <VmenuTopic value="/button" label="Button"/>
       </VmenuCategory>
+      <VmenuCategory value="/transition" label="Transitions"/>
       <VmenuCategory value="/typograpy" label="Typograpy"/>
       <VmenuCategory value="/layout" label="Layout"/>
       <VmenuCategory value="/icons" label="Icons"/>
