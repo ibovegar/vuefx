@@ -1,29 +1,29 @@
 <template>
-  <Flex direction="column" :gutter="40">
-    <Flex direction="column" align-items="center">
-      <h3>Centered</h3>
-      <ChipGroup align="center">
-        <Chip v-for="fruit in fruits" :key="fruit" :fx-styles="outline">{{ fruit }}</Chip>
+  <Flex dir="column" :gutter="40">
+    <p>Centered</p>
+    <Paper spacing="large">
+      <ChipGroup align="center" :gutter="10">
+        <Chip v-for="fruit in fruits" :key="fruit" :fx-styles="chip" raised>{{ fruit }}</Chip>
       </ChipGroup>
-    </Flex>
-    <Flex direction="column" align-items="center">
-      <h3>Left aligned</h3>
-      <ChipGroup>
-        <Chip v-for="fruit in fruits" :key="fruit" :fx-styles="outline">{{ fruit }}</Chip>
+    </Paper>
+    <p>Left aligned</p>
+    <Paper spacing="large">
+      <ChipGroup :gutter="10">
+        <Chip v-for="fruit in fruits" :key="fruit" :fx-styles="chip" raised>{{ fruit }}</Chip>
       </ChipGroup>
-    </Flex>
-    <Flex direction="column" align-items="center">
-      <h3>Right aligned</h3>
-      <ChipGroup align="right">
-        <Chip v-for="fruit in fruits" :key="fruit" :fx-styles="outline">{{ fruit }}</Chip>
+    </Paper>
+    <p>Right aligned</p>
+    <Paper spacing="large">
+      <ChipGroup align="right" :gutter="10">
+        <Chip v-for="fruit in fruits" :key="fruit" :fx-styles="chip" raised>{{ fruit }}</Chip>
       </ChipGroup>
-    </Flex>
-    <Flex direction="column" align-items="center">
-      <h3>Scrollable</h3>
-      <ChipGroup draggable>
-        <Chip v-for="fruit in fruits" :key="fruit" :fx-styles="outline">{{ fruit }}</Chip>
+    </Paper>
+    <p>Scrollable</p>
+    <Paper spacing="large">
+      <ChipGroup :gutter="10" draggable>
+        <Chip v-for="fruit in fruits" :key="fruit" :fx-styles="chip" raised>{{ fruit }}</Chip>
       </ChipGroup>
-    </Flex>
+    </Paper>
   </Flex>
 </template>
 
@@ -41,10 +41,9 @@ export default {
         'Pineapple',
         'Watermelon'
       ],
-      outline: {
-        background: 'fill-1',
-        font: 'font-3',
-        border: 'border-3'
+      chip: {
+        background: 'fill-3',
+        font: 'font-3'
       }
     }
   }

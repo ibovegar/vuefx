@@ -3,15 +3,17 @@
     <button @click="selectedItem = 'print'">Select print</button>
     <Dropdown
       v-model="selectedItem"
-      auto-width
-      focus-check
-      close-on-click
       fixed
+      overlay
+      auto-width
       >
       <button slot="trigger">Preferences</button>
-      <DropdownItem value="save"><Icon name="account-circle"/></DropdownItem>
+      <DropdownItem value="open" icon-left><Icon name="folder-open" font5/>Open existing project</DropdownItem>
+      <DropdownItem value="create"><Icon name="note-plus-outline" font5/>Create new project</DropdownItem>
       <DropdownItem separator/>
-      <DropdownItem disabled value="save_all">Save all</DropdownItem>
+      <DropdownItem value="export"><Icon name="export" font5/>Export</DropdownItem>
+      <DropdownItem value="save_all" disabled><Icon name="content-save" font5/>Save</DropdownItem>
+      <DropdownItem value="save_all" disabled><Icon name="content-save-all" font6/>Save all</DropdownItem>
       <DropdownItem value="preferences">Preferences</DropdownItem>
       <DropdownItem value="print">Print</DropdownItem>
       <DropdownItem separator/>
@@ -31,9 +33,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.ks-icon {
-  margin-right: var(--spacing--small);
-}
-</style>

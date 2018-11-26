@@ -1,82 +1,39 @@
 <template>
-  <section>
-    <Select
-      label="Default style"
-      :options="types"
-      v-model="selectedTypes"
-      fixed
-      />
-    <Select
-      label="Secondary colors"
-      :options="types"
-      fx-color="secondary"
-      fx-font="secondary"
-      fx-border="secondary"
-      v-model="selectedTypes"
-      fixed
-      />
-    <Select
-      label="Alert colors"
-      :options="types"
-      fx-color="alert"
-      fx-border="alert"
-      fx-font="alert"
-      v-model="selectedTypes"
-      fixed
-      />
-    <Select
-      label="Soft colors"
-      :options="types"
-      fx-color="font-5"
-      fx-border="border-4"
-      fx-font="font-3"
-      v-model="selectedTypes"
-      fixed
-      />
-    <Select
-      label="Mixed colors"
-      :options="types"
-      :fx-styles="customStyles"
-      v-model="selectedTypes"
-      fixed
-      />
-  </section>
+  <Flex :gutter="50" justify-content="center" wrap>
+    <Select label="Default style" :width="width" fixed/>
+    <Select label="Secondary colors" :fx-styles="secondary" :width="width" fixed/>
+    <Select label="Alert colors" :fx-styles="alert" :width="width" fixed/>
+    <Select label="Soft colors" :fx-styles="soft" :width="width" fixed/>
+    <Select label="Mixed colors" :fx-styles="mixed" :width="width" fixed/>
+  </Flex>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      customStyles: {
+      width: 155,
+      mixed: {
         color: 'secondary',
         border: 'warning',
         font: 'primary'
       },
-      selectedTypes: [],
-      types: [
-        { name: 'Apple', value: 'fruit_1' },
-        { name: 'Banana', value: 'fruit_2' },
-        { name: 'Orange', value: 'fruit_3' },
-        { name: 'Kiwi', value: 'fruit_4' }
-      ]
+      soft: {
+        color: 'font-5',
+        border: 'border-4',
+        font: 'font-3'
+      },
+      alert: {
+        color: 'alert',
+        border: 'alert',
+        font: 'alert'
+      },
+      secondary: {
+        color: 'secondary',
+        border: 'secondary',
+        font: 'secondary'
+      }
     }
   }
 }
 </script>
-
-<style scoped>
-section {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  .fx-select {
-    margin: 20px 0;
-    float: left;
-    margin-right: 20px;
-    width: 145px;
-  }
-}
-</style>
