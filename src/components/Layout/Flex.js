@@ -4,18 +4,8 @@ export default {
   functional: true,
 
   props: {
-    wrap: {
-      default: 'nowrap',
-      validator: function (value) {
-        return [
-          'nowrap',
-          'wrap',
-          'wrap-reverse'
-        ].includes(value)
-      }
-    },
     justifyContent: {
-      default: 'flex-start',
+      default: null,
       validator: function (value) {
         return [
           'flex-end',
@@ -27,7 +17,7 @@ export default {
       }
     },
     alignItems: {
-      default: 'stretch',
+      default: null,
       validator: function (value) {
         return [
           'flex-start',
@@ -38,8 +28,8 @@ export default {
         ].includes(value)
       }
     },
-    direction: {
-      default: 'row',
+    dir: {
+      default: null,
       validator: function (value) {
         return [
           'row',
@@ -50,7 +40,7 @@ export default {
       }
     },
     alignContent: {
-      default: 'stretch',
+      default: null,
       validator: function (value) {
         return [
           'flex-end',
@@ -67,37 +57,45 @@ export default {
     height: { type: [Number, String], default: null },
     gutter: { Number, default: 0 },
     inline: Boolean,
-    simple: Boolean
+    simple: Boolean,
+    wrap: Boolean,
+    wrapReverse: Boolean
   },
 
   render: (h, { props, data, children }) => {
     let styles = {
-      flexDirection: props.direction,
-      flexWrap: props.wrap,
+      flexDirection: props.dir,
+      flexWrap: null,
       justifyContent: props.justifyContent,
+      width: Number.isInteger(props.width) ? props.width + 'px' : props.width,
+      height: Number.isInteger(props.height) ? props.height + 'px' : props.height,
       alignItems: props.alignItems,
       display: props.inline ? 'inline-flex' : 'flex',
       padding: props.gutter / 2 + 'px'
     }
+
+    if (props.wrap) styles.flexWrap = 'wrap'
+    if (props.wrapReverse) styles.flexWrap = 'wrap-reverse'
 
     data.staticStyle = { ...data.staticStyle, ...styles }
     data.staticClass = (` fx-flex ${data.staticClass || ''}`).trim()
 
     if (children) {
       for (let child of children) {
-        let styles = {}
         child.data = child.data || {}
+
+        let staticClass = child.data.staticClass || ''
+        let styles = {}
 
         if (props.gutter) {
           styles.margin = props.gutter ? props.gutter / 2 + 'px' : null
         }
 
-        if (child.data.attrs) {
+        if (child.data.attrs && !staticClass.includes('fx-flex-item')) {
           styles.order = child.data.attrs.order || null
           styles.alignSelf = child.data.attrs.self || null
           styles.flex = child.data.attrs.flex || null
         }
-
         child.data.staticStyle = { ...child.data.staticStyle, ...styles }
       }
     }
