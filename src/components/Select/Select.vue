@@ -9,13 +9,16 @@
     :auto-width="autoWidth"
     :show-checkbox="showCheckbox"
     :fixed="fixed"
-    :style="[{ minHeight: height + 'px' }, colorStyles]"
+    :style="[{ minHeight: height + 'px', width: width + 'px'}, colorStyles]"
     overlay
     @input="$emit('input', $event)"
     @show="showPopper = true"
     @hide="showPopper = false"
     >
-    <form slot="trigger" @click="$refs.input.focus()">
+    <form
+      slot="trigger"
+      @click="$refs.input.focus()"
+      >
       <input
         ref="input"
         :placeholder="inputPlaceholder"
@@ -82,18 +85,15 @@ export default {
     transition: String,
     fixed: Boolean,
     height: Number,
+    width: Number,
     autoWidth: Boolean,
     showCheckbox: Boolean,
     dragChips: Boolean,
     value: [String, Array],
     appendToBody: Boolean,
     boundariesElement: String,
-    options: { type: Array, required: true, default: () => [] },
-    theme: {
-      type: String,
-      default: 'material',
-      validator: value => { return ['material', 'boxed'].includes(value) }
-    }
+    options: { type: Array, default: () => [] },
+    boxed: Boolean
   },
 
   watch: {
@@ -110,8 +110,8 @@ export default {
   computed: {
     rootClasses: function () {
       return {
-        'is-material': this.theme === 'material',
-        'is-boxed': this.theme === 'boxed',
+        'is-material': !this.boxed,
+        'is-boxed': this.boxed,
         'is-disabled': this.disabled,
         'is-focused': this.isFocused,
         'is-selected': this.value && this.value.length,
@@ -119,7 +119,7 @@ export default {
       }
     },
     showLabel: function () {
-      return this.theme === 'material' && !this.hideLabel && !this.hideLabelFocus
+      return !this.boxed && !this.hideLabel && !this.hideLabelFocus
     },
     showChips: function () {
       return this.multiple && this.value && this.value.length > 0
@@ -128,7 +128,7 @@ export default {
       return this.showChips ? null : this.getDisplayName(this.value)
     },
     inputPlaceholder: function () {
-      return this.theme === 'material' || this.showChips ? null : this.label
+      return !this.boxed || this.showChips ? null : this.label
     }
   },
 
