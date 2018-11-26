@@ -41,15 +41,15 @@ export default {
   props: {
     value: [String, Array],
     disabled: Boolean,
-    focusColor: Boolean,
-    focusCheckmark: Boolean,
     showCheckbox: Boolean,
     multiple: Boolean,
     closeOnClick: Boolean,
-    focusBackground: { type: Boolean, default: true },
+    focusBg: Boolean,
+    focusCheck: Boolean,
+    focusColor: Boolean,
     transition: {
       type: String,
-      default: 'scale-top-left',
+      default: 'slide-down',
       validator: value => { return ['scale-top-left', 'slide-down'].includes(value) }
     }
   },
@@ -143,6 +143,8 @@ export default {
     border-radius: var(--border-radius--small);
     padding: var(--spacing--small) 0;
     transform-style: preserve-3d;
+    max-height: 300px;
+    overflow-y: auto;
     @mixin elevation 7;
 
     &:focus { outline: none }

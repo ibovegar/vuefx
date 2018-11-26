@@ -2,6 +2,7 @@
   <li
     class="fx-dropdown-item"
     :class="[rootClasses, selectedClass]"
+    :style="rootStyles"
     @click="$parent.selectItem(value, $event.target)"
     >
     <!--fx-checkbox
@@ -15,8 +16,8 @@
       <slot/>
     <!--/template-->
     <Icon
-      v-if="isSelected && $parent.focusCheckmark"
-      class="checkmark tiny"
+      v-if="isSelected && $parent.focusCheck"
+      class="checkmark"
       name="checkmark"
       />
   </li>
@@ -29,7 +30,8 @@ export default {
   props: {
     value: { type: String, default: null },
     separator: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    height: Number
   },
 
   computed: {
@@ -45,12 +47,17 @@ export default {
         'has-focus': this.$parent.focusedItem === this.value
       }
     },
+    rootStyles: function () {
+      return {
+        height: this.height + 'px'
+      }
+    },
     selectedClass: function () {
       if (!this.isSelected) return
       return {
-        'focus-background': this.$parent.focusBackground,
+        'focus-background': this.$parent.focusBg,
         'focus-color': this.$parent.focusColor,
-        'focus-checkmark': this.$parent.focusCheckmark
+        'focus-checkmark': this.$parent.focusCheck
       }
     }
   }
@@ -59,21 +66,22 @@ export default {
 
 <style>
 .fx-dropdown-item {
-  padding: var(--spacing--medium);
+  padding: 0 var(--spacing--medium);
+  height: 50px;
   font-weight: var(--font-weight--regular);
   color: var(--color--font-1);
   cursor: pointer;
   text-align: left;
   cursor: pointer;
   white-space: nowrap;
-  margin: 1px 0;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
+  transition: background-color 0.15s, color 0.15s;
 
   &:hover, &:focus {
-    background-color: var(--color--fill-3);
+    background-color: var(--color--fill-4);
     outline: none;
   }
 
