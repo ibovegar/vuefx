@@ -19,8 +19,9 @@ export default new Router({
     /* Styles & Themes */
     route('typography', 'Typography'),
     route('colors', 'Colors'),
-    route('icons', 'Icons'),
+    route('icons', 'icons/index'),
     route('customization', 'customization/index'),
+    route('transition', 'transition/index'),
     route('layout', 'layout/index'),
     /* UI Components */
     route('vmenu', 'components/v-menu/index'),
