@@ -1,14 +1,14 @@
 <template>
   <section>
-    <Paper :elevation="5">
+    <Paper>
       <Flex :gutter="20">
         <img :src="require('docs/assets/img/album-art.png')"/>
-        <Flex direction="column" flex="1">
+        <Flex dir="column" flex="1">
           <Flex align-items="center" class="hr">
             <h3 flex="1">View popular songs in related category</h3>
             <Icon name="dots-vertical"/>
           </Flex>
-          <Flex direction="column" justify-content="center"  flex="1">
+          <Flex dir="column" justify-content="center"  flex="1">
             <h2>The Silver Dollars</h2>
             <h1>Track 3: Worlds In Between</h1>
           </Flex>

@@ -9,6 +9,9 @@
     </component-demo>
     <component-api :api="api"/>
     <component-examples>
+      <component-demo title="Flex item" :component="FlexItem" :code="FlexItemCode">
+        Lorem ipsum dolor sit amet
+      </component-demo>
       <component-demo title="Layout example" :component="Layout" :code="LayoutCode">
         Lorem ipsum dolor sit amet
       </component-demo>
@@ -20,6 +23,8 @@
 import api from './api'
 import Usage from './x-usage'
 import UsageRaw from '!raw-loader!./x-usage'
+import FlexItem from './x-flex-item'
+import FlexItemRaw from '!raw-loader!./x-flex-item'
 import Layout from './x-layout'
 import LayoutRaw from '!raw-loader!./x-layout'
 
@@ -29,6 +34,8 @@ export default {
       api,
       Usage,
       UsageCode: this.$splitComponent(UsageRaw),
+      FlexItem,
+      FlexItemCode: this.$splitComponent(FlexItemRaw),
       Layout,
       LayoutCode: this.$splitComponent(LayoutRaw)
     }

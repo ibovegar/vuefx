@@ -1,29 +1,33 @@
 <template>
-  <Flex direction="column" :gutter="20">
-    <article>
-      <Flex>
-        <Paper height="40px" width="200px"/>
+  <Flex dir="column" :gutter="40">
+    <Paper>
+      <Flex dir="column" :gutter="30">
+        <Paper self="flex-start" fx-background="secondary" width="20%" height="40px"/>
+        <Paper self="center" fx-background="secondary" width="20%" height="40px"/>
+        <Paper self="flex-end" fx-background="secondary" width="20%" height="40px"/>
       </Flex>
-      <Flex justify-content="center">
-        <Paper height="40px" width="200px"/>
+    </Paper>
+    <Paper>
+      <Flex :gutter="30" justify-content="flex-start" wrap>
+        <Paper
+          v-for="index in 10"
+          :key="index"
+          fx-background="secondary"
+          width="80px"
+          height="80px"
+          />
       </Flex>
-      <Flex justify-content="flex-end">
-        <Paper height="40px" width="200px"/>
-      </Flex>
-    </article>
-    <article>
-      <Flex :gutter="30" justify-content="flex-start" wrap="wrap">
-        <Paper v-for="index in 10" :key="index" height="100px" width="100px" :elevation="1"/>
-      </Flex>
-    </article>
-    <article>
-      <Flex :gutter="10">
-        <Paper v-for="index in 3" :key="index"/>
-          <Flex :gutter="10">
-            <Paper v-for="index in 4" :key="index" height="10px" width="10px"/>
+    </Paper>
+    <Paper>
+      <Flex :gutter="30" wrap>
+        <Paper v-for="index in 3" :key="index">
+          <Flex :gutter="20">
+            <Paper fx-background="secondary" width="50px" height="20px"/>
+            <Paper fx-background="secondary" width="50px" height="20px"/>
+            <Paper fx-background="secondary" width="50px" height="20px"/>
           </Flex>
         </Paper>
       </Flex>
-    </article>
+    </Paper>
   </Flex>
 </template>
