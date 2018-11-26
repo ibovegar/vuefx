@@ -5,9 +5,7 @@ module.exports = {
     'postcss-mixins': {
       mixinsDir: path.resolve(__dirname, './src/styles/mixins')
     },
-    'postcss-functions': {
-      glob: path.join(__dirname, './src/styles/functions', '*.js')
-    },
+    'postcss-easings': {},
     'postcss-nested': {},
     'postcss-reporter': {}
   }
