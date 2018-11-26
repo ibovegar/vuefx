@@ -11,10 +11,11 @@ import Vmenu from './components/Vmenu'
 import Layout from './components/Layout'
 import Paper from './components/Paper'
 import Icons from './components/Icon'
+import Transitions from './components/Transitions'
 
 const components = {
   AnimateHeight, Badge, Chips, Dropdown, Popover, Select, Tabs, Vmenu,
-  Layout, Paper, Icons
+  Layout, Paper, Icons, Transitions
 }
 
 /* Declare install function executed by Vue.use() */
@@ -35,7 +36,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export {
   AnimateHeight, Badge, Chips, Dropdown, Popover, Select, Tabs, Vmenu,
-  Layout, Paper, Icons
+  Layout, Paper, Icons, Transitions
 }
 
 /* To allow use as module (npm/webpack/etc.) export component */
