@@ -1,8 +1,12 @@
 import Flex from './Flex'
+import FlexItem from './FlexItem'
 import { registerComponent } from '@/utils/plugins'
 
-Flex.install = function (Vue, options) {
-  registerComponent(Vue, options, Flex)
+export default {
+  install (Vue, options) {
+    registerComponent(Vue, options, Flex)
+    registerComponent(Vue, options, FlexItem)
+  }
 }
 
-export default Flex
+export { Flex, FlexItem }
