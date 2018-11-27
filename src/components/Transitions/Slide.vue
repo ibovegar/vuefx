@@ -18,7 +18,7 @@ export default {
       validator: (value) => ['left', 'right', 'up', 'down'].includes(value)
     },
     duration: { type: Number, default: 500 },
-    easing: { type: String, default: 'easeInSine' },
+    easing: { type: String, default: 'easeInSine' }
   },
   render: function (createElement, { props, children }) {
     var data = {
