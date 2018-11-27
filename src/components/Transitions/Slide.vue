@@ -1,19 +1,10 @@
-<template functional>
-  <transition
-    :enter-active-class="'fx-slide-' + props.enter + '-enter'"
-    :leave-active-class="'fx-slide-' + props.leave + '-leave'"
-    @before-enter="props.methods.before($event, props)"
-    @before-leave="props.methods.before($event, props)"
-    >
-    <slot/>
-  </transition>
-</template>
-
 <script>
 import easing from '@/utils/easing.js'
 
 export default {
   name: 'FxSlide',
+
+  functional: true,
 
   props: {
     enter: {
@@ -28,17 +19,25 @@ export default {
     },
     duration: { type: Number, default: 500 },
     easing: { type: String, default: 'easeInSine' },
-    methods: {
-      type: Object,
-      default () {
-        return {
-          before: function (el, props) {
-            el.style.animationTimingFunction = easing(props.easing)
-            el.style.animationDuration = `${props.duration}ms`
-          }
+  },
+  render: function (createElement, { props, children }) {
+    var data = {
+      props: {
+        enterActiveClass: `fx-slide-${props.enter}-enter`,
+        leaveActiveClass: `fx-slide-${props.leave}-leave`
+      },
+      on: {
+        beforeEnter: function (el) {
+          el.style.animationTimingFunction = easing(props.easing)
+          el.style.animationDuration = `${props.duration}ms`
+        },
+        beforeLeave: function (el) {
+          el.style.animationTimingFunction = easing(props.easing)
+          el.style.animationDuration = `${props.duration}ms`
         }
       }
     }
+    return createElement('transition', data, children)
   }
 }
 </script>
@@ -54,35 +53,35 @@ export default {
 .fx-slide-right-leave { animation-name: fxSlideRightLeave }
 
 @keyframes fxSlideDownEnter {
-  from { opacity: 0; transform: translateY(-20px) }
+  from { opacity: 0; transform: translateY(-30px) }
   to { opacity: 1; transform: translateY(0) }
 }
 @keyframes fxSlideDownLeave {
   from { opacity: 1; transform: translateY(0) }
-  to { opacity: 0; transform: translateY(20px) }
+  to { opacity: 0; transform: translateY(30px) }
 }
 @keyframes fxSlideUpEnter {
-  from { opacity: 0; transform: translateY(20px) }
+  from { opacity: 0; transform: translateY(30px) }
   to { opacity: 1; transform: translateY(0) }
 }
 @keyframes fxSlideUpLeave {
   from { opacity: 1; transform: translateY(0) }
-  to { opacity: 0; transform: translateY(-20px) }
+  to { opacity: 0; transform: translateY(-30px) }
 }
 @keyframes fxSlideLeftEnter {
-  from { opacity: 0; transform: translateX(20px) }
+  from { opacity: 0; transform: translateX(30px) }
   to { opacity: 1; transform: translateY(0) }
 }
 @keyframes fxSlideLeftLeave {
   from { opacity: 1; transform: translateY(0) }
-  to { opacity: 0; transform: translateX(-20px) }
+  to { opacity: 0; transform: translateX(-30px) }
 }
 @keyframes fxSlideRightEnter {
-  from { opacity: 0; transform: translateX(-20px) }
+  from { opacity: 0; transform: translateX(-30px) }
   to { opacity: 1; transform: translateY(0) }
 }
 @keyframes fxSlideRightLeave {
   from { opacity: 1; transform: translateY(0) }
-  to { opacity: 0; transform: translateX(20px) }
+  to { opacity: 0; transform: translateX(30px) }
 }
 </style>
