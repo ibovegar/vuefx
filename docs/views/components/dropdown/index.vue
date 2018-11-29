@@ -20,9 +20,9 @@
 import api from './api'
 import Usage from './x-usage'
 import UsageRaw from '!raw-loader!./x-usage'
-import Single from './x-usage'
+import Single from './x-single'
 import SingleRaw from '!raw-loader!./x-single'
-import Multiple from './x-usage'
+import Multiple from './x-multiple'
 import MultipleRaw from '!raw-loader!./x-multiple'
 
 export default {
@@ -34,7 +34,7 @@ export default {
       Single,
       SingleCode: this.$splitComponent(SingleRaw),
       Multiple,
-      MultipleCode: this.$splitComponent(MultipleRaw),
+      MultipleCode: this.$splitComponent(MultipleRaw)
     }
   }
 }

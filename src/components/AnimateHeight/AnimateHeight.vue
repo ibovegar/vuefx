@@ -9,7 +9,7 @@ import ResizeObserver from 'resize-observer-polyfill'
 import _throttle from 'lodash/throttle'
 
 export default {
-  name: 'fx-animate-height',
+  name: 'FxAnimateHeight',
 
   mounted () {
     this.$nextTick(() => {

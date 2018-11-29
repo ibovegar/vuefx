@@ -17,7 +17,7 @@
 
 <script>
 import ColorMixin from '@/mixins/colors.js'
-import Icon from '../Icon'
+import Icon from '../Icon/Icon'
 
 export default {
   name: 'FxChip',

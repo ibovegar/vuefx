@@ -28,7 +28,7 @@ export default {
   props: {
     offsetX: { type: Number, default: 0 },
     offsetY: { type: Number, default: 0 },
-    value: { type: Number, default: 0, required: true },
+    value: { type: Number, default: 0 },
     raised: Boolean,
     outline: Boolean,
     sticky: Boolean,

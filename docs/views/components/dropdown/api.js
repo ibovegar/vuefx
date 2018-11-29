@@ -7,7 +7,7 @@ export default [
         values: '—',
         default: '<u>undefined</u>',
         description: 'Default text'
-      },
+      }
     ],
     events: [
       {

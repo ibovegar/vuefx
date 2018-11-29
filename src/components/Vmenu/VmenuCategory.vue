@@ -22,7 +22,7 @@
 
 <script>
 import Expandable from '@/mixins/expandable.js'
-import Icon from '../Icon'
+import Icon from '../Icon/Icon'
 
 export default {
   name: 'FxVmenuCategory',

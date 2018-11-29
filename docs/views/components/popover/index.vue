@@ -48,7 +48,7 @@ export default {
       Width,
       WidthCode: this.$splitComponent(WidthRaw),
       Content,
-      ContentCode: this.$splitComponent(ContentRaw),
+      ContentCode: this.$splitComponent(ContentRaw)
     }
   }
 }

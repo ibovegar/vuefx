@@ -54,7 +54,7 @@ import Dropdown from '../Dropdown/Dropdown'
 import DropdownItem from '../Dropdown/DropdownItem'
 import Chip from '../Chips/Chip'
 import ChipGroup from '../Chips/ChipGroup'
-import Icon from '../Icon'
+import Icon from '../Icon/Icon'
 
 export default {
   name: 'FxSelect',

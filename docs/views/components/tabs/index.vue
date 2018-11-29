@@ -27,7 +27,7 @@ export default {
       Usage,
       UsageCode: this.$splitComponent(UsageRaw),
       Responsive,
-      ResponsiveCode: this.$splitComponent(ResponsiveRaw),
+      ResponsiveCode: this.$splitComponent(ResponsiveRaw)
     }
   }
 }

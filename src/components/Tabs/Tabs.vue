@@ -15,7 +15,7 @@
       <transition-group tag="div" class="slide" :name="transitionName">
         <div
           v-for="tab in tabs"
-          v-if="tab === value"
+          v-show="tab === value"
           class="slide-item"
           :key="tab"
           >
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import AnimateHeight from '../AnimateHeight/'
+import AnimateHeight from '../AnimateHeight/AnimateHeight'
 
 export default {
   name: 'FxTabs',
