@@ -2,7 +2,7 @@
   <div
     class="component-demo"
     :class="rootClasses"
-    :theme="themeType[selectedTheme]"
+    :theme="selectedTheme"
     >
     <title-3 v-if="isExample" :title="title"><slot/></title-3>
     <title-2 v-else :title="title"><slot/></title-2>
@@ -16,14 +16,14 @@
       <div class="box__tools">
         <Dropdown
           v-model="selectedTheme"
-          @input="selectedTheme = selectedTheme >= 2 ? 0 : selectedTheme + 1"
+          focus-bg
           auto-width
           close-on-click
           >
           <Icon slot="trigger" name="invert-colors"/>
-          <DropdownItem value="default">Default</DropdownItem>
-          <DropdownItem value="light">Light</DropdownItem>
-          <DropdownItem value="dark">Dark</DropdownItem>
+          <DropdownItem value="default"><Icon name="eye-off"/>&nbsp; Default theme</DropdownItem>
+          <DropdownItem value="light"><Icon name="eye-outline"/>&nbsp; Light theme</DropdownItem>
+          <DropdownItem value="dark"><Icon name="eye"/>&nbsp; Dark theme</DropdownItem>
         </Dropdown>
         <Dropdown auto-width close-on-click>
           <Icon slot="trigger" name="dots-vertical"/>
@@ -43,17 +43,10 @@
 </template>
 
 <script>
-const themeType = Object.freeze({
-  '0': 'default',
-  '1': 'light',
-  '2': 'dark'
-})
-
 export default {
   data () {
     return {
       selectedTab: 'Result',
-      themeType: themeType,
       selectedTheme: 'light',
       isExample: false,
       debugElm: {}
@@ -68,13 +61,6 @@ export default {
   },
 
   computed: {
-    themeSelectIcon: function () {
-      switch (this.themeType[this.selectedTheme]) {
-        case 'light': return 'eye'
-        case 'dark': return 'eye-outline'
-        case 'default': return 'eye-off'
-      }
-    },
     rootClasses: function () {
       return {
         'is-example': this.isExample,
